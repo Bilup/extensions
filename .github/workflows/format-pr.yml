@@ -104,10 +104,10 @@ jobs:
           git config --global user.name "$GITHUB_ACTOR"
           git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git stage .
-          git commit --author "DangoCat[bot] <dangocat@users.noreply.github.com>" -m "[Automated] Format code" || commit_failed
+          git commit -m "[Automated] Format code" || commit_failed
 
           # Explicitly set push.default to upstream, otherwise by default git might complain about us being on a
-          # branch called "DangoCat/master" but the corresponding branch on remote "DangoCat" is just "master".
+          # branch called "DangoCat/main" but the corresponding branch on remote "DangoCat" is just "main".
           git config --global push.default upstream
           git push || push_failed
         env:

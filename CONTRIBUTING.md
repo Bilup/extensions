@@ -2,10 +2,10 @@
 
 To learn how to write custom extensions, see our documentation:
 
- - https://docs.turbowarp.org/development/extensions/introduction
- - https://docs.turbowarp.org/development/extensions/unsandboxed
- - https://docs.turbowarp.org/development/extensions/compatibility
- - https://docs.turbowarp.org/development/extensions/better-development-server
+ - https://docs.bilup.org/extensions/introduction
+ - https://docs.bilup.org/extensions/unsandboxed
+ - https://docs.bilup.org/extensions/compatibility
+ - https://docs.bilup.org/extensions/better-development-server
  - and more in the sidebar of those pages
 
 The rest of this page is about this specific repository.
@@ -23,7 +23,6 @@ Like any tool, AI has good uses and bad uses. Follow these guidelines to avoid w
 
 These categories of extensions are **highly discouraged**:
 
- - Broad "Utilities" extensions. Break them up into multiple extensions instead. See https://github.com/TurboWarp/extensions/issues/674 for discussion.
  - Extensions that are very similar to existing ones. Consider modifying the existing extension instead.
  - Very niche extensions. You can write the extension for yourself, then import it as a file instead without needing us to review.
  - Extensions whose primary purpose is monetization. It isn't in the spirit of a free and open source project.
@@ -33,7 +32,7 @@ Some extensions were added before these guidelines existed. We're trying to enfo
 
 ## Security
 
-TurboWarp's threat model is that loading a project in the editor should be no more dangerous than opening a PowerPoint. Projects can't affect anything outside of the editor without consent from the user. We offer a [bug bounty](https://github.com/TurboWarp/extensions/security/policy) to people who find and report security bugs in merged extensions. Most guardrails can disappear once the project is packaged.
+Bilup's threat model is that loading a project in the editor should be no more dangerous than opening a PowerPoint. Projects can't affect anything outside of the editor without consent from the user. Most guardrails can disappear once the project is packaged.
 
 Evaluating project-supplied JavaScript using `eval()`, `new Function()`, or other methods is not allowed.
 
@@ -41,7 +40,7 @@ Evaluating project-supplied JavaScript using `eval()`, `new Function()`, or othe
 
 Every merged extension is more code that we are expected to maintain indefinitely, even if you disappear. Broken extensions mean that real projects by real people no longer work. If the renderer is rewritten one day, we will have to ensure that extensions like Clipping & Blending, RGB Channels, and Augmented Reality still work. That's not a small commitment.
 
-We're all volunteers who all have lives outside of TurboWarp extensions. Many have full time jobs or are full time students. We'll get to you as soon as we can, so please be patient.
+We're all volunteers who all have lives outside of Bilup extensions. Many have full time jobs or are full time students. We'll get to you as soon as we can, so please be patient.
 
 ## Writing and organizing extensions
 
@@ -55,7 +54,7 @@ New extensions should be added in a user folder. You can name your folder anythi
 
 Everything in this repository must be available under an open source license. You can use any license you want, but we recommend using the [Mozilla Public License verison 2.0](licenses/MPL-2.0.txt) for all new extensions.
 
-All extension are included in TurboWarp Desktop which is licensed under the GPLv3. Thus, you need to use [a license that is compatible with GPLv3](https://www.gnu.org/licenses/license-list.en.html). This excludes:
+All extension are included in Bilup Desktop which is licensed under the GPLv3. Thus, you need to use [a license that is compatible with GPLv3](https://www.gnu.org/licenses/license-list.en.html). This excludes:
 
  - Creative Commons Attribution-ShareAlike licenses prior to version 4.0
    - This includes user-generated content on the Scratch website which [uses version 2.0](https://scratch.mit.edu/terms_of_use).
@@ -89,7 +88,7 @@ You must use line comments; block comments `/* */` will not work. These fields a
 
 ## Translations
 
-Extensions should support being translated into any language. The development server and [volunteer translators](https://docs.turbowarp.org/translate) will handle the hard part. The developer's job is to use `Scratch.translate()` for any string that should be translated, such as block text or labels. Here's some examples to explain the idea:
+Extensions should support being translated into zh-CN and en-US. The development server will handle the hard part. The developer's job is to use `Scratch.translate()` for any string that should be translated, such as block text or labels. Here's some examples to explain the idea:
 
 ```js
 // For simple strings that can be understood without additional context,
@@ -129,7 +128,7 @@ Add your extension's path (without `extensions/` and without `.js`) to `extensio
 
 New extensions do not need an image for the library, but they are encouraged. Put any image in the `images` folder with the same folder name and file name but different file extension as the extension's JavaScript. For example, if your extension's code is in `extensions/TestMuffin/fetch.js`, the image would be `images/TestMuffin/fetch.svg` or `images/TestMuffin/fetch.png`. The homepage generator will find this file automatically. Images are displayed in a 2:1 aspect ratio. SVG (preferred), PNG, or JPG are accepted. PNG or JPG should be 600x300 in resolution. Add attribution to `images/README.md` for yourself and anything not made by you. Images submitted to this repository must be licensed under the [GNU General Public License version 3](licenses/GPL-3.0.txt). Avoid text if possible since these images can't be translated.
 
-Most extensions shouldn't need external documentation -- it should be obvious what to do just by looking at the blocks. That said, some do need more explanation. Documentation is written in markdown and placed in the `docs` folder with a similar layout to images. For example, documentation for `extensions/TestMuffin/fetch.js` would be `docs/TestMuffin/fetch.md`. Our version of markdown is extended to allow rendering [scratchblocks](https://scratchblocks.github.io/). Just look at the existing documentation for syntax examples. It's not a perfect experience: block colors have to be manually copied, and icons aren't supported, but it's better than what we had before. Once you put your markdown there, you can set a `docsURI` like `https://extensions.turbowarp.org/TestMuffin/fetch`.
+Most extensions shouldn't need external documentation -- it should be obvious what to do just by looking at the blocks. That said, some do need more explanation. Documentation is written in markdown and placed in the `docs` folder with a similar layout to images. For example, documentation for `extensions/TestUser/fetch.js` would be `docs/TestUser/fetch.md`. Our version of markdown is extended to allow rendering [scratchblocks](https://scratchblocks.github.io/). Just look at the existing documentation for syntax examples. It's not a perfect experience: block colors have to be manually copied, and icons aren't supported, but it's better than what we had before. Once you put your markdown there, you can set a `docsURI` like `https://extensions.bilup.org/TestUser/fetch`.
 
 Static resources such as example resources used by extensions go in the `website` folder. They are copied to the final website without any additional processing.
 
@@ -155,7 +154,7 @@ ESLint detects common JavaScript errors such as referencing non-existant variabl
 npm run lint
 ```
 
-We use Prettier to ensure consistent code formatting. You can format your pull request by commenting "!format" on it then waiting a couple minutes for the bot to process it, or you can format your code locally with:
+We use Prettier to ensure consistent code formatting. Format your code locally with:
 
 ```bash
 npm run format
