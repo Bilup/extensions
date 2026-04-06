@@ -1,5 +1,5 @@
 // This is based on what we do in the packager:
-// https://github.com/TurboWarp/packager/blob/master/src/packager/base85.js
+// https://github.com/Bilup/packager/blob/master/src/packager/base85.js
 // It's worked pretty well over there.
 // We've just changed the character set a bit to accomodate us being in a JS context instead of an HTML context.
 

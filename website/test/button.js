@@ -5,7 +5,7 @@
       return {
         id: 'testbutton',
         name: 'test 123',
-        docsURI: 'https://extensions.turbowarp.org',
+        docsURI: 'https://extensions.bilup.org',
         blocks: [
           {
             blockType: Scratch.BlockType.BUTTON,

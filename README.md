@@ -1,8 +1,8 @@
-# TurboWarp Extension Gallery
+# Bilup Extension Gallery
 
-User-contributed unsandboxed extension gallery for TurboWarp.
+User-contributed unsandboxed extension gallery for Bilup.
 
-https://extensions.turbowarp.org/
+https://extensions.bilup.org/
 
 ## Contributing
 
