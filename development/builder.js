@@ -884,6 +884,7 @@ class Builder {
       this.mode
     );
     build.files["/sitemap.xml"] = new SitemapFile(build);
+    build.files["/favicon.ico"] = new BuildFile(pathUtil.join(import.meta.dirname, "../favicon.ico"));
 
     build.files["/generated-metadata/extensions-v0.json"] =
       new JSONMetadataFile(
