@@ -7,29 +7,18 @@
 (function (Scratch) {
     'use strict';
 
-    Scratch.translate.setup({
-        "zh-cn": {
-            "_Color Toolset": "颜色工具集",
-            "_Tons of color-related tools, meow. you can mix colors, invert them, find complementary colors, convert formats, and more — super useful tools, meow": "超多关于颜色的工具喵，有混合颜色，反色，互补色，转换格式等超好用的工具喵",
-            "_mix hex colors [COLOR1] [COLOR2]": "混合十六进制颜色 [COLOR1] [COLOR2]",
-            "_mix rgb colors [R1] [G1] [B1] [R2] [G2] [B2]": "混合RGB颜色 [R1] [G1] [B1] [R2] [G2] [B2]",
-            "_hex to rgb colors [COLOR]": "十六进制转RGB颜色 [COLOR]",
-            "_rgb to hex colors [R] [G] [B]": "RGB转十六进制颜色 [R] [G] [B]",
-            "_brighten color [COLOR] amount [AMOUNT]%": "提亮颜色 [COLOR] 程度 [AMOUNT]%",
-            "_darken color [COLOR] amount [AMOUNT]%": "变暗颜色 [COLOR] 程度 [AMOUNT]%",
-            "_invert color [COLOR]": "反色 [COLOR]",
-            "_random color": "随机颜色",
-            "_gradient [COLOR1] [COLOR2] position [POS]%": "渐变色 [COLOR1] [COLOR2] 位置 [POS]%",
-            "_complementary color [COLOR]": "互补色 [COLOR]"
-        }
-    })
-
     class ColorTools {
         getInfo() {
             return {
                 id: 'colortools',
-                name: Scratch.translate({default: "Color Toolset"}),
-                description: Scratch.translate({default: "tons of color-related tools, meow, you can mix colors, invert them, find complementary colors, convert formats, and more — super useful tools, meow"}),
+                name: Scratch.translate({
+                    id: "extensionName",
+                    default: "Color Toolset"
+                }),
+                description: Scratch.translate({
+                    id: "extensionDecp",
+                    default: "tons of color-related tools, meow, you can mix colors, invert them, find complementary colors, convert formats, and more — super useful tools, meow"
+                }),
                 color1: '#FF6B6B',
                 color2: '#4ECDC4',
                 color3: '#45B7D1',
@@ -37,7 +26,10 @@
                     {
                         opcode: 'mixHex',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "mix hex colors [COLOR1] [COLOR2]"}),
+                        text: Scratch.translate({
+                            id: "mixHex",
+                            default: "mix hex colors [COLOR1] [COLOR2]"
+                        }),
                         arguments: {
                             COLOR1: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' },
                             COLOR2: { type: Scratch.ArgumentType.STRING, defaultValue: '#0000FF' }
@@ -46,7 +38,10 @@
                     {
                         opcode: 'mixRgb',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "mix rgb colors [R1] [G1] [B1] [R2] [G2] [B2]"}),
+                        text: Scratch.translate({
+                            id: "mixRgb",
+                            default: "mix rgb colors [R1] [G1] [B1] [R2] [G2] [B2]"
+                        }),
                         arguments: {
                             R1: { type: Scratch.ArgumentType.NUMBER, defaultValue: 255 },
                             G1: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
@@ -59,7 +54,10 @@
                     {
                         opcode: 'hexToRgb',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "hex to rgb colors [COLOR]"}),
+                        text: Scratch.translate({
+                            id: "hexToRgb",
+                            default: "hex to rgb colors [COLOR]"
+                        }),
                         arguments: {
                             COLOR: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' }
                         }
@@ -67,7 +65,10 @@
                     {
                         opcode: 'rgbToHex',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "rgb to hex colors [R] [G] [B]"}),
+                        text: Scratch.translate({
+                            id: "rgbToHex",
+                            default: "rgb to hex colors [R] [G] [B]"
+                        }),
                         arguments: {
                             R: { type: Scratch.ArgumentType.NUMBER, defaultValue: 255 },
                             G: { type: Scratch.ArgumentType.NUMBER, defaultValue: 0 },
@@ -77,7 +78,10 @@
                     {
                         opcode: 'brighten',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "brighten color [COLOR] amount [AMOUNT]%"}),
+                        text: Scratch.translate({
+                            id: "brighten",
+                            default: "brighten color [COLOR] amount [AMOUNT]%"
+                        }),
                         arguments: {
                             COLOR: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' },
                             AMOUNT: { type: Scratch.ArgumentType.NUMBER, defaultValue: 20 }
@@ -86,7 +90,10 @@
                     {
                         opcode: 'darken',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "darken color [COLOR] amount [AMOUNT]%"}),
+                        text: Scratch.translate({
+                            id: "darken",
+                            default: "darken color [COLOR] amount [AMOUNT]%"
+                        }),
                         arguments: {
                             COLOR: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' },
                             AMOUNT: { type: Scratch.ArgumentType.NUMBER, defaultValue: 20 }
@@ -95,7 +102,10 @@
                     {
                         opcode: 'invert',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "invert color [COLOR]"}),
+                        text: Scratch.translate({
+                            id: "invert",
+                            default: "invert color [COLOR]"
+                        }),
                         arguments: {
                             COLOR: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' }
                         }
@@ -103,13 +113,19 @@
                     {
                         opcode: 'randomColor',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "random color"}),
+                        text: Scratch.translate({
+                            id: "randomColor",
+                            default: "random color"
+                        }),
                         arguments: {}
                     },
                     {
                         opcode: 'gradient',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "gradient [COLOR1] [COLOR2] position [POS]%"}),
+                        text: Scratch.translate({
+                            id: "gradient",
+                            default: "gradient [COLOR1] [COLOR2] position [POS]%"
+                        }),
                         arguments: {
                             COLOR1: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' },
                             COLOR2: { type: Scratch.ArgumentType.STRING, defaultValue: '#0000FF' },
@@ -119,7 +135,10 @@
                     {
                         opcode: 'complementary',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({default: "complementary color [COLOR]"}),
+                        text: Scratch.translate({
+                            id: "complementary",
+                            default: "complementary color [COLOR]"
+                        }),
                         arguments: {
                             COLOR: { type: Scratch.ArgumentType.STRING, defaultValue: '#FF0000' }
                         }
