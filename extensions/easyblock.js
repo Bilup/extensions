@@ -25,7 +25,7 @@
                 description: Scratch.translate({ default:"Provide convenient blocks for Scratch users" ,id: "extensionDescription" }),
 
                 blocks: [
-                    // 布尔值判断
+                    // Boolean Check
                     {
                         blockType: 'label',
                         text: Scratch.translate({ default:"Boolean Check" ,id: "groupName1" }),
@@ -51,7 +51,7 @@
                             }
                         }
                     },
-                    // 数值操作&数学运算
+                    // Number Operation & Math Operation
                     {
                         blockType: 'label',
                         text: Scratch.translate({ default:"Number Operation & Math Operation" ,id: "groupName2" }),
@@ -171,7 +171,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num1]^[Num2]" ,id: "block_numPower" }),
+                        text: Scratch.translate({ default:"[Num1] to the power of [Num2]" ,id: "block_numPower" }),
                         opcode: 'numPower',
                         arguments: {
                             Num1: {
@@ -199,7 +199,7 @@
                             }
                         }
                     },
-                    // 字符串操作
+                    // String Operation
                     {
                         blockType: 'label',
                         text: Scratch.translate({ default:"String Operation" ,id: "groupName3" }),
@@ -249,10 +249,32 @@
                             }
                         }
                     },
-                    // 条件判断
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default:"[Unicode] corresponds to Str" ,id: "block_unicodeToString" }),
+                        opcode: 'unicodeToString',
+                        arguments: {
+                            Unicode: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 97,
+                            },
+                        }
+                    },
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default:"[Str] corresponds to Unicode" ,id: "block_stringToUnicode" }),
+                        opcode: 'stringToUnicode',
+                        arguments: {
+                            Str: {
+                                type: ArgumentType.STRING,
+                                defaultValue: 'a',
+                            },
+                        }
+                    },
+                    // Other Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"Other" ,id: "groupName4" }),
+                        text: Scratch.translate({ default:"Other Operation" ,id: "groupName4" }),
                     },
                     {
                         blockType: BlockType.REPORTER,
@@ -334,6 +356,7 @@
                         { text: 'π', value: 'pi' },
                         { text: 'e', value: 'e' },
                         { text: 'φ', value: 'phi' },
+                        { text: 'γ', value: 'gamma' },
                     ],
                     ConstString: [
                         { text: 'Enter', value: 'newline' },
@@ -406,6 +429,7 @@
             if (Value === 'pi') return Math.PI;
             if (Value === 'e') return Math.E;
             if (Value === 'phi') return (1 + Math.sqrt(5)) / 2;
+            if (Value === 'gamma') return 0.5772156649015329;
             return 0;
         }
 
@@ -517,6 +541,22 @@
         stringEqual(args) {
             const { Str1 = '', Str2 = '' } = args;
             return Str1 === Str2;
+        }
+
+        unicodeToString(args) {
+            const { Unicode = 0 } = args;
+            return String.fromCharCode(Unicode);
+        }
+
+        stringToUnicode(args) {
+            const { Str = '' } = args;
+            if (Str == '' || Str == null || Str == undefined) {
+                return 0;
+            }else if (Str.length > 1) {
+                return 0;
+            }
+            return Str.charCodeAt(0);
+            
         }
     }
 
