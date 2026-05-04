@@ -40,6 +40,7 @@
         "easyblock@block_unicodeToString": "[Unicode]对应文字",
         "easyblock@block_stringToUnicode": "[Str]对应Unicode",
         "easyblock@block_returnNewId":"生成[num]位的id",
+        "easyblock@block_returnRandomBool":"概率[num]",
         "easyblock@menu_typeNumber": "数值",
         "easyblock@menu_typeString": "字符串",
         "easyblock@menu_typeBig": "较大",

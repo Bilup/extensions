@@ -51,6 +51,17 @@
                             }
                         }
                     },
+                    {
+                        blockType: BlockType.BOOLEAN,
+                        text: Scratch.translate({ default:"Probability[num]" ,id: "block_returnRandomBool" }),
+                        opcode: 'returnRandomBool',
+                        arguments: {
+                            num: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 0.5,
+                            }
+                        }
+                    },
                     // Number Operation & Math Operation
                     {
                         blockType: 'label',
@@ -577,6 +588,13 @@
                 result += chars[Math.floor(Math.random() * chars.length)];
             }
             return result;
+        }
+
+        returnRandomBool(args) {
+            const { num = 0.5 } = args;
+            if(num < 0)return false;
+            if(num > 1)return true;
+            return Math.random() < num;
         }
     }
 
