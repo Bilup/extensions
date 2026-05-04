@@ -25,10 +25,10 @@
                 description: Scratch.translate({ default:"Provide convenient blocks for Scratch users" ,id: "extensionDescription" }),
 
                 blocks: [
-                    // Boolean Check
+                    // Boolean Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"Boolean Check" ,id: "groupName1" }),
+                        text: Scratch.translate({ default:"Boolean Operation" ,id: "groupName1" }),
                     },
                     {
                         blockType: BlockType.BOOLEAN,
@@ -344,7 +344,17 @@
                         }
                     },
 
-
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default:"Return the new id with [num] digits", id:"block_returnNewId" }),
+                        opcode: 'returnNewId',
+                        arguments: {
+                            num: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 6,
+                            },
+                        }
+                    },
                 ],
 
                 menus: {
@@ -557,6 +567,16 @@
             }
             return Str.charCodeAt(0);
             
+        }
+
+        returnNewId(args) {
+            const { num = 6 } = args;
+            let result = '';
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            for (let i = 0; i < num; i++) {
+                result += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return result;
         }
     }
 
