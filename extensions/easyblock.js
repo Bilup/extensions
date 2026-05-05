@@ -282,6 +282,25 @@
                             },
                         }
                     },
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default:"[Str] of [num1] to [num2]" ,id: "block_returnStringRange" }),
+                        opcode: 'returnStringRange',
+                        arguments: {
+                            Str: {
+                                type: ArgumentType.STRING,
+                                defaultValue: 'apple',
+                            },
+                            num1: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 1,
+                            },
+                            num2: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 4,
+                            }
+                        }
+                    },
                     // Other Operation
                     {
                         blockType: 'label',
@@ -365,6 +384,22 @@
                                 defaultValue: 6,
                             },
                         }
+                    },
+                    {
+                        blockType: BlockType.COMMAND,
+                        text: Scratch.translate({ default:"Copy[Str] to Clipboard", id:"block_copyString" }),
+                        opcode: 'copyString',
+                        arguments: {
+                            Str: {
+                                type: ArgumentType.STRING,
+                                defaultValue: '',
+                            },
+                        }
+                    },
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default:"Clipboard Content", id:"block_clipboardString" }),
+                        opcode: 'clipboardString',
                     },
                 ],
 
@@ -590,11 +625,48 @@
             return result;
         }
 
+        copyString(args) {
+            const { Str = '' } = args;
+            if (Str == '' || Str == null || Str == undefined) {
+                return;
+            }
+            if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
+                try {
+                    navigator.clipboard.writeText(Str);
+                } catch (e) {
+                    // if failed, do nothing.
+                }
+            }
+        }
+
+        clipboardString() {
+            if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.readText) {
+                try {
+                    return navigator.clipboard.readText();
+                } catch (e) {
+                    return '';
+                }
+            }
+            return '';
+        }
+
         returnRandomBool(args) {
             const { num = 0.5 } = args;
             if(num < 0)return false;
             if(num > 1)return true;
             return Math.random() < num;
+        }
+
+        returnStringRange(args) {
+            const { Str = '', num1 = 0, num2 = 0 } = args;
+            if(num1 < 0 || num1 >= Str.length) {
+                return '';
+            }
+            if(num2 < 0 || num2 >= Str.length) {
+                return '';
+            }
+            return Str.substring(num1, num2); 
+            //Tips: The first character is the 0th character.
         }
     }
 
