@@ -7,7 +7,7 @@
 (function (_Scratch) {
     'use strict';
 
-    const { ArgumentType, BlockType, TargetType, Cast, translate, extensions } = _Scratch;
+    const { ArgumentType, BlockType, TargetType, Cast, translate, extensions, } = _Scratch;
 
     class EasyBlock {
         constructor(_runtime) {
@@ -17,22 +17,22 @@
         getInfo() {
             return {
                 id: 'easyblock',
-                name: Scratch.translate({ default:"EasyBlock+" ,id: "extensionName" }),
+                name: Scratch.translate({ default: "EasyBlock+", id: "extensionName" }),
 
                 color1: '#00d1ff',
                 color2: '#06b9ff',
 
-                description: Scratch.translate({ default:"Provide convenient blocks for Scratch users" ,id: "extensionDescription" }),
+                description: Scratch.translate({ default: "Provide convenient blocks for Scratch users", id: "extensionDescription" }),
 
                 blocks: [
                     // Boolean Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"Boolean Operation" ,id: "groupName1" }),
+                        text: Scratch.translate({ default: "Boolean Operation", id: "groupName1" }),
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"[Bool]" ,id: "block_boolCheck" }),
+                        text: Scratch.translate({ default: "[Bool]", id: "block_boolCheck" }),
                         opcode: 'boolCheck',
                         arguments: {
                             Bool: {
@@ -42,7 +42,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"Return[TypeBool]" ,id: "block_boolType" }),
+                        text: Scratch.translate({ default: "Return[TypeBool]", id: "block_boolType" }),
                         opcode: 'boolType',
                         arguments: {
                             TypeBool: {
@@ -53,7 +53,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"Probability[num]" ,id: "block_returnRandomBool" }),
+                        text: Scratch.translate({ default: "Probability[num]", id: "block_returnRandomBool" }),
                         opcode: 'returnRandomBool',
                         arguments: {
                             num: {
@@ -62,14 +62,46 @@
                             }
                         }
                     },
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default: "If [Bool],then [valueA], else [valueB]", id: "block_valueIfElse" }),
+                        opcode: 'valueIfElse',
+                        arguments: {
+                            Bool: {
+                                type: ArgumentType.BOOLEAN,
+                            },
+                            valueA: {
+                                type: ArgumentType.STRING,
+                                defaultValue: 'apple',
+                            },
+                            valueB: {
+                                type: ArgumentType.STRING,
+                                defaultValue: 'banana',
+                            }
+                        }
+                    },
+                    {
+                        blockType: BlockType.HAT,
+                        text: Scratch.translate({ default: "When [Bool] come to [TypeBool]", id: "block_whenBoolCome" }),
+                        opcode: 'whenBoolCome',
+                        arguments: {
+                            Bool: {
+                                type: ArgumentType.BOOLEAN,
+                            },
+                            TypeBool: {
+                                type: ArgumentType.STRING,
+                                menu: 'ConstBool',
+                            }
+                        }
+                    },
                     // Number Operation & Math Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"Number Operation & Math Operation" ,id: "groupName2" }),
+                        text: Scratch.translate({ default: "Number Operation & Math Operation", id: "groupName2" }),
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num], highest is [high]" ,id: "block_numHighest" }),
+                        text: Scratch.translate({ default: "[Num], highest is [high]", id: "block_numHighest" }),
                         opcode: 'numHighest',
                         arguments: {
                             Num: {
@@ -84,7 +116,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num], lowest is [low]" ,id: "block_numLowest" }),
+                        text: Scratch.translate({ default: "[Num], lowest is [low]", id: "block_numLowest" }),
                         opcode: 'numLowest',
                         arguments: {
                             Num: {
@@ -99,7 +131,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num], keep [decimal] decimal places" ,id: "block_numDecimal" }),
+                        text: Scratch.translate({ default: "[Num], keep [decimal] decimal places", id: "block_numDecimal" }),
                         opcode: 'numDecimal',
                         arguments: {
                             Num: {
@@ -114,7 +146,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"The [Type] value of [Num1] and [Num2]" ,id: "block_numBigSmall" }),
+                        text: Scratch.translate({ default: "The [Type] value of [Num1] and [Num2]", id: "block_numBigSmall" }),
                         opcode: 'numBigSmall',
                         arguments: {
                             Num1: {
@@ -133,7 +165,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"[Num1]>=[Num2]" ,id: "block_numBigEqual" }),
+                        text: Scratch.translate({ default: "[Num1]>=[Num2]", id: "block_numBigEqual" }),
                         opcode: 'numBigEqual',
                         arguments: {
                             Num1: {
@@ -148,7 +180,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"[Num1]<=[Num2]," ,id: "block_numSmallEqual" }),  
+                        text: Scratch.translate({ default: "[Num1]<=[Num2],", id: "block_numSmallEqual" }),
                         opcode: 'numSmallEqual',
                         arguments: {
                             Num1: {
@@ -163,7 +195,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"[Num1]=[Num2], error is [Num3]" ,id: "block_numNearEqual" }),
+                        text: Scratch.translate({ default: "[Num1]=[Num2], error is [Num3]", id: "block_numNearEqual" }),
                         opcode: 'numNearEqual',
                         arguments: {
                             Num1: {
@@ -182,7 +214,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num1] to the power of [Num2]" ,id: "block_numPower" }),
+                        text: Scratch.translate({ default: "[Num1] to the power of [Num2]", id: "block_numPower" }),
                         opcode: 'numPower',
                         arguments: {
                             Num1: {
@@ -197,7 +229,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Num]of [Sqrt]th root" ,id: "block_numSqrt" }),
+                        text: Scratch.translate({ default: "[Num]of [Sqrt]th root", id: "block_numSqrt" }),
                         opcode: 'numSqrt',
                         arguments: {
                             Num: {
@@ -213,11 +245,11 @@
                     // String Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"String Operation" ,id: "groupName3" }),
+                        text: Scratch.translate({ default: "String Operation", id: "groupName3" }),
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Str], default value is [defaultValue]" ,id: "block_stringDefault" }),
+                        text: Scratch.translate({ default: "[Str], default value is [defaultValue]", id: "block_stringDefault" }),
                         opcode: 'stringDefault',
                         arguments: {
                             Str: {
@@ -232,7 +264,7 @@
                     },
                     {
                         blockType: BlockType.BOOLEAN,
-                        text: Scratch.translate({ default:"[Str1]===[Str2]" ,id: "block_stringEqual" }),
+                        text: Scratch.translate({ default: "[Str1]===[Str2]", id: "block_stringEqual" }),
                         opcode: 'stringEqual',
                         arguments: {
                             Str1: {
@@ -247,7 +279,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Convert[Str] to [Type]" ,id: "block_stringTurn" }),
+                        text: Scratch.translate({ default: "Convert[Str] to [Type]", id: "block_stringTurn" }),
                         opcode: 'stringTurn',
                         arguments: {
                             Str: {
@@ -262,7 +294,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Unicode] corresponds to Str" ,id: "block_unicodeToString" }),
+                        text: Scratch.translate({ default: "[Unicode] corresponds to Str", id: "block_unicodeToString" }),
                         opcode: 'unicodeToString',
                         arguments: {
                             Unicode: {
@@ -273,7 +305,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Str] corresponds to Unicode" ,id: "block_stringToUnicode" }),
+                        text: Scratch.translate({ default: "[Str] corresponds to Unicode", id: "block_stringToUnicode" }),
                         opcode: 'stringToUnicode',
                         arguments: {
                             Str: {
@@ -284,7 +316,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"[Str] of [num1] to [num2]" ,id: "block_returnStringRange" }),
+                        text: Scratch.translate({ default: "[Str] of [num1] to [num2]", id: "block_returnStringRange" }),
                         opcode: 'returnStringRange',
                         arguments: {
                             Str: {
@@ -304,30 +336,13 @@
                     // Other Operation
                     {
                         blockType: 'label',
-                        text: Scratch.translate({ default:"Other Operation" ,id: "groupName4" }),
+                        text: Scratch.translate({ default: "Other Operation", id: "groupName4" }),
                     },
-                    {
-                        blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"If [Bool],then [valueA], else [valueB]" ,id: "block_valueIfElse" }),
-                        opcode: 'valueIfElse',
-                        arguments: {
-                            Bool: {
-                                type: ArgumentType.BOOLEAN,
-                            },
-                            valueA: {
-                                type: ArgumentType.STRING,
-                                defaultValue: 'apple',
-                            },
-                            valueB: {
-                                type: ArgumentType.STRING,
-                                defaultValue: 'banana',
-                            }
-                        }
-                    },
+                    
 
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Return[Value]", id:"block_constNum" }),
+                        text: Scratch.translate({ default: "Return[Value]", id: "block_constNum" }),
                         opcode: 'constNum',
                         arguments: {
                             Value: {
@@ -338,7 +353,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Return[Value]", id:"block_constString" }),
+                        text: Scratch.translate({ default: "Return[Value]", id: "block_constString" }),
                         opcode: 'constString',
                         arguments: {
                             Value: {
@@ -349,7 +364,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Return[Value]", id:"block_constType" }),
+                        text: Scratch.translate({ default: "Return[Value]", id: "block_constType" }),
                         opcode: 'constType',
                         arguments: {
                             Value: {
@@ -360,7 +375,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Convert[Value] to [Type]", id:"block_toValue" }),
+                        text: Scratch.translate({ default: "Convert[Value] to [Type]", id: "block_toValue" }),
                         opcode: 'toValue',
                         arguments: {
                             Value: {
@@ -376,7 +391,7 @@
 
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Return the new id with [num] digits", id:"block_returnNewId" }),
+                        text: Scratch.translate({ default: "Return the new id with [num] digits", id: "block_returnNewId" }),
                         opcode: 'returnNewId',
                         arguments: {
                             num: {
@@ -387,7 +402,7 @@
                     },
                     {
                         blockType: BlockType.COMMAND,
-                        text: Scratch.translate({ default:"Copy[Str] to Clipboard", id:"block_copyString" }),
+                        text: Scratch.translate({ default: "Copy[Str] to Clipboard", id: "block_copyString" }),
                         opcode: 'copyString',
                         arguments: {
                             Str: {
@@ -398,7 +413,7 @@
                     },
                     {
                         blockType: BlockType.REPORTER,
-                        text: Scratch.translate({ default:"Clipboard Content", id:"block_clipboardString" }),
+                        text: Scratch.translate({ default: "Clipboard Content", id: "block_clipboardString" }),
                         opcode: 'clipboardString',
                     },
                 ],
@@ -420,12 +435,12 @@
                         { text: 'Tab', value: 'tab' },
                     ],
                     ConstType: [
-                        { text: Scratch.translate({ default:"Number", id:"menu_typeNumber" }), value: 'Number' },
-                        { text: Scratch.translate({ default:"String", id:"menu_typeString" }), value: 'String' },
+                        { text: Scratch.translate({ default: "Number", id: "menu_typeNumber" }), value: 'Number' },
+                        { text: Scratch.translate({ default: "String", id: "menu_typeString" }), value: 'String' },
                     ],
                     ConstTypeBigSmall: [
-                        { text: Scratch.translate({ default:"Highest", id:"menu_typeBig" }), value: 'Highest' },
-                        { text: Scratch.translate({ default:"Lowest", id:"menu_typeSmall" }), value: 'Lowest' },
+                        { text: Scratch.translate({ default: "Highest", id: "menu_typeBig" }), value: 'Highest' },
+                        { text: Scratch.translate({ default: "Lowest", id: "menu_typeSmall" }), value: 'Lowest' },
                     ],
                     ConstValueType: [
                         { text: 'null', value: 'null' },
@@ -435,8 +450,8 @@
                         { text: '-Infinity', value: '-Infinity' },
                     ],
                     ConstStrType: [
-                        { text: Scratch.translate({ default:"Uppercase", id:"menu_typeStrBig" }), value: 'Uppercase' },
-                        { text: Scratch.translate({ default:"Lowercase", id:"menu_typeStrSmall" }), value: 'Lowercase' }   ,
+                        { text: Scratch.translate({ default: "Uppercase", id: "menu_typeStrBig" }), value: 'Uppercase' },
+                        { text: Scratch.translate({ default: "Lowercase", id: "menu_typeStrSmall" }), value: 'Lowercase' },
                     ],
                 }
 
@@ -608,11 +623,11 @@
             const { Str = '' } = args;
             if (Str == '' || Str == null || Str == undefined) {
                 return 0;
-            }else if (Str.length > 1) {
+            } else if (Str.length > 1) {
                 return 0;
             }
             return Str.charCodeAt(0);
-            
+
         }
 
         returnNewId(args) {
@@ -652,21 +667,31 @@
 
         returnRandomBool(args) {
             const { num = 0.5 } = args;
-            if(num < 0)return false;
-            if(num > 1)return true;
+            if (num < 0) return false;
+            if (num > 1) return true;
             return Math.random() < num;
         }
 
         returnStringRange(args) {
             const { Str = '', num1 = 0, num2 = 0 } = args;
-            if(num1 < 0 || num1 >= Str.length) {
+            if (num1 < 0 || num1 >= Str.length) {
                 return '';
             }
-            if(num2 < 0 || num2 >= Str.length) {
+            if (num2 < 0 || num2 >= Str.length) {
                 return '';
             }
-            return Str.substring(num1, num2); 
+            return Str.substring(num1, num2);
             //Tips: The first character is the 0th character.
+        }
+
+        whenBoolCome(args) {
+            const { Bool = false, TypeBool = '' } = args;
+            if (Bool && TypeBool === 'True') {
+                Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
+            }else if(!Bool && TypeBool === 'False'){
+                Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
+            }
+
         }
     }
 
