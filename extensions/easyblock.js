@@ -80,20 +80,21 @@
                             }
                         }
                     },
-                    {
-                        blockType: BlockType.HAT,
-                        text: Scratch.translate({ default: "When [Bool] come to [TypeBool]", id: "block_whenBoolCome" }),
-                        opcode: 'whenBoolCome',
-                        arguments: {
-                            Bool: {
-                                type: ArgumentType.BOOLEAN,
-                            },
-                            TypeBool: {
-                                type: ArgumentType.STRING,
-                                menu: 'ConstBool',
-                            }
-                        }
-                    },
+                    // {
+                    //     blockType: BlockType.HAT,
+                    //     text: Scratch.translate({ default: "When [Bool] come to [TypeBool]", id: "block_whenBoolCome" }),
+                    //     opcode: 'whenBoolCome',
+                    //     isEdgeActivated: false,
+                    //     arguments: {
+                    //         Bool: {
+                    //             type: ArgumentType.BOOLEAN,
+                    //         },
+                    //         TypeBool: {
+                    //             type: ArgumentType.STRING,
+                    //             menu: 'ConstBool',
+                    //         }
+                    //     }
+                    // },
                     // Number Operation & Math Operation
                     {
                         blockType: 'label',
@@ -239,6 +240,17 @@
                             Sqrt: {
                                 type: ArgumentType.NUMBER,
                                 defaultValue: 2,
+                            }
+                        }
+                    },
+                    {
+                        blockType: BlockType.REPORTER,
+                        text: Scratch.translate({ default: "factorial of [Num]", id: "block_numFactorial" }),
+                        opcode: 'numFactorial',
+                        arguments: {
+                            Num: {
+                                type: ArgumentType.NUMBER,
+                                defaultValue: 5,
                             }
                         }
                     },
@@ -683,17 +695,33 @@
             return Str.substring(num1, num2);
             //Tips: The first character is the 0th character.
         }
-
-        whenBoolCome(args) {
-            const { Bool = false, TypeBool = '' } = args;
-            if (Bool && TypeBool === 'True') {
-                Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
-            }else if(!Bool && TypeBool === 'False'){
-                Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
+        
+        numFactorial(args) {
+            const { Num = 0 } = args;
+            if (Num < 0) return 0;
+            if (Num === 0) return 1;
+            let result = 1;
+            for (let i = 1; i <= Num; i++) {
+                result *= i;
             }
-
+            return result;
         }
+
+        // whenBoolCome(args) {
+        //     const { Bool = false, TypeBool = '' } = args;
+        //     if (Bool && TypeBool === 'True') {
+        //         return true;
+        //     }else if(!Bool && TypeBool === 'False'){
+        //         return true;
+        //     }
+        //     return false;
+        // }
     }
+
+    // Scratch.vm.runtime.on('BEFORE_EXECUTE', () => {
+    // // startHats is the same as before!
+    //     Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
+    // });
 
     extensions.register(new EasyBlock());
 }(Scratch));
