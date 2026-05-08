@@ -5,6 +5,11 @@
 // License: MIT
 
 (function (_Scratch) {
+
+    if (!Scratch.extensions.unsandboxed) {
+    throw new Error('This example must run unsandboxed');
+    }
+
     'use strict';
 
     const { ArgumentType, BlockType, TargetType, Cast, translate, extensions, } = _Scratch;
@@ -80,21 +85,21 @@
                             }
                         }
                     },
-                    // {
-                    //     blockType: BlockType.HAT,
-                    //     text: Scratch.translate({ default: "When [Bool] come to [TypeBool]", id: "block_whenBoolCome" }),
-                    //     opcode: 'whenBoolCome',
-                    //     isEdgeActivated: false,
-                    //     arguments: {
-                    //         Bool: {
-                    //             type: ArgumentType.BOOLEAN,
-                    //         },
-                    //         TypeBool: {
-                    //             type: ArgumentType.STRING,
-                    //             menu: 'ConstBool',
-                    //         }
-                    //     }
-                    // },
+                    {
+                        blockType: BlockType.HAT,
+                        text: Scratch.translate({ default: "When [Bool] come to [TypeBool]", id: "block_whenBoolCome" }),
+                        opcode: 'whenBoolCome',
+                        isEdgeActivated: true,
+                        arguments: {
+                            Bool: {
+                                type: ArgumentType.BOOLEAN,
+                            },
+                            TypeBool: {
+                                type: ArgumentType.STRING,
+                                menu: 'ConstBool',
+                            }
+                        }
+                    },
                     // Number Operation & Math Operation
                     {
                         blockType: 'label',
@@ -707,21 +712,16 @@
             return result;
         }
 
-        // whenBoolCome(args) {
-        //     const { Bool = false, TypeBool = '' } = args;
-        //     if (Bool && TypeBool === 'True') {
-        //         return true;
-        //     }else if(!Bool && TypeBool === 'False'){
-        //         return true;
-        //     }
-        //     return false;
-        // }
+        whenBoolCome(args) {
+            const { Bool = false, TypeBool = '' } = args;
+            if (TypeBool === 'true') {
+                return Cast.toBoolean(Bool);
+            } else if (TypeBool === 'false') {
+                return !Cast.toBoolean(Bool);
+            }
+            return false;
+        }
     }
-
-    // Scratch.vm.runtime.on('BEFORE_EXECUTE', () => {
-    // // startHats is the same as before!
-    //     Scratch.vm.runtime.startHats('easyblock_whenBoolCome');
-    // });
 
     extensions.register(new EasyBlock());
 }(Scratch));
