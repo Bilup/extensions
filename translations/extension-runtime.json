@@ -13,7 +13,7 @@
         "colortools@gradient": "渐变色 [COLOR1] [COLOR2] 位置 [POS]%",
         "colortools@complementary": "互补色 [COLOR]",
         "easyblock@extensionName": "便利积木+",
-        "easyblock@extensionDescription": "提供便利的积木块",
+        "easyblock@extensionDescription": "使代码运行更加简便",
         "easyblock@groupName1": "布尔值判断",
         "easyblock@groupName2": "数值操作&数学运算",
         "easyblock@groupName3": "字符串操作",
