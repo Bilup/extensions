@@ -20,22 +20,19 @@
         getInfo() {
             return {
                 id: 'easyblock',
-                name: this.translate('EasyBlock+', 'extensionName'),
+                name: Scratch.translate({ default: 'EasyBlock+', id: 'extensionName' }),
                 color1: '#00d1ff',
                 color2: '#06b9ff',
-                description: this.translate(
-                    'Provide convenient blocks for Scratch users',
-                    'extensionDescription'
-                ),
+                description: Scratch.translate({ default: 'Provide convenient blocks for Scratch users', id: 'extensionDescription' }),
 
                 blocks: [
                     // ========== 布尔值操作 ==========
-                    this.createLabel('Boolean Operation', 'groupName1'),
+                    { blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'Boolean Operation', id: 'groupName1' }) },
 
                     // 判断布尔值
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('[Bool]', 'block_boolCheck'),
+                        text: Scratch.translate({ default: '[Bool]', id: 'block_boolCheck' }),
                         opcode: 'boolCheck',
                         arguments: {
                             Bool: {
@@ -47,7 +44,7 @@
                     // 返回指定布尔值
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('Return[TypeBool]', 'block_boolType'),
+                        text: Scratch.translate({ default: 'Return[TypeBool]', id: 'block_boolType' }),
                         opcode: 'boolType',
                         arguments: {
                             TypeBool: {
@@ -60,7 +57,7 @@
                     // 随机布尔值（概率）
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('Probability[num]', 'block_returnRandomBool'),
+                        text: Scratch.translate({ default: 'Probability[num]', id: 'block_returnRandomBool' }),
                         opcode: 'returnRandomBool',
                         arguments: {
                             num: {
@@ -73,10 +70,7 @@
                     // 条件选择
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            'If [Bool],then [valueA], else [valueB]',
-                            'block_valueIfElse'
-                        ),
+                        text: Scratch.translate({ default: 'If [Bool],then [valueA], else [valueB]', id: 'block_valueIfElse' }),
                         opcode: 'valueIfElse',
                         arguments: {
                             Bool: { type: Scratch.ArgumentType.BOOLEAN },
@@ -94,10 +88,7 @@
                     // 布尔值变化触发
                     {
                         blockType: Scratch.BlockType.HAT,
-                        text: this.translate(
-                            'When [Bool] come to [TypeBool]',
-                            'block_whenBoolCome'
-                        ),
+                        text: Scratch.translate({ default: 'When [Bool] come to [TypeBool]', id: 'block_whenBoolCome' }),
                         opcode: 'whenBoolCome',
                         isEdgeActivated: true,
                         arguments: {
@@ -110,12 +101,12 @@
                     },
 
                     // ========== 数值操作 & 数学运算 ==========
-                    this.createLabel('Number Operation & Math Operation', 'groupName2'),
+                    { blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'Number Operation & Math Operation', id: 'groupName2' }) },
 
                     // 上限限制
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('[Num], highest is [high]', 'block_numHighest'),
+                        text: Scratch.translate({ default: '[Num], highest is [high]', id: 'block_numHighest' }),
                         opcode: 'numHighest',
                         arguments: {
                             Num: {
@@ -132,7 +123,7 @@
                     // 下限限制
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('[Num], lowest is [low]', 'block_numLowest'),
+                        text: Scratch.translate({ default: '[Num], lowest is [low]', id: 'block_numLowest' }),
                         opcode: 'numLowest',
                         arguments: {
                             Num: {
@@ -149,10 +140,7 @@
                     // 保留小数位
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            '[Num], keep [decimal] decimal places',
-                            'block_numDecimal'
-                        ),
+                        text: Scratch.translate({ default: '[Num], keep [decimal] decimal places', id: 'block_numDecimal' }),
                         opcode: 'numDecimal',
                         arguments: {
                             Num: {
@@ -169,10 +157,7 @@
                     // 取最大/最小值
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            'The [Type] value of [Num1] and [Num2]',
-                            'block_numBigSmall'
-                        ),
+                        text: Scratch.translate({ default: 'The [Type] value of [Num1] and [Num2]', id: 'block_numBigSmall' }),
                         opcode: 'numBigSmall',
                         arguments: {
                             Num1: {
@@ -193,7 +178,7 @@
                     // 大于等于比较
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('[Num1]>=[Num2]', 'block_numBigEqual'),
+                        text: Scratch.translate({ default: '[Num1]>=[Num2]', id: 'block_numBigEqual' }),
                         opcode: 'numBigEqual',
                         arguments: {
                             Num1: {
@@ -210,7 +195,7 @@
                     // 小于等于比较
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('[Num1]<=[Num2]', 'block_numSmallEqual'),
+                        text: Scratch.translate({ default: '[Num1]<=[Num2]', id: 'block_numSmallEqual' }),
                         opcode: 'numSmallEqual',
                         arguments: {
                             Num1: {
@@ -227,10 +212,7 @@
                     // 近似相等
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate(
-                            '[Num1]=[Num2], error is [Num3]',
-                            'block_numNearEqual'
-                        ),
+                        text: Scratch.translate({ default: '[Num1]=[Num2], error is [Num3]', id: 'block_numNearEqual' }),
                         opcode: 'numNearEqual',
                         arguments: {
                             Num1: {
@@ -251,7 +233,7 @@
                     // 幂运算
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('[Num1] to the power of [Num2]', 'block_numPower'),
+                        text: Scratch.translate({ default: '[Num1] to the power of [Num2]', id: 'block_numPower' }),
                         opcode: 'numPower',
                         arguments: {
                             Num1: {
@@ -268,7 +250,7 @@
                     // 开方运算
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('[Num] of [Sqrt]th root', 'block_numSqrt'),
+                        text: Scratch.translate({ default: '[Num] of [Sqrt]th root', id: 'block_numSqrt' }),
                         opcode: 'numSqrt',
                         arguments: {
                             Num: {
@@ -285,7 +267,7 @@
                     // 阶乘
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('factorial of [Num]', 'block_numFactorial'),
+                        text: Scratch.translate({ default: 'factorial of [Num]', id: 'block_numFactorial' }),
                         opcode: 'numFactorial',
                         arguments: {
                             Num: {
@@ -296,15 +278,12 @@
                     },
 
                     // ========== 字符串操作 ==========
-                    this.createLabel('String Operation', 'groupName3'),
+                    { blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'String Operation', id: 'groupName3' }) },
 
                     // 默认值处理
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            '[Str], default value is [defaultValue]',
-                            'block_stringDefault'
-                        ),
+                        text: Scratch.translate({ default: '[Str], default value is [defaultValue]', id: 'block_stringDefault' }),
                         opcode: 'stringDefault',
                         arguments: {
                             Str: {
@@ -321,7 +300,7 @@
                     // 字符串相等比较
                     {
                         blockType: Scratch.BlockType.BOOLEAN,
-                        text: this.translate('[Str1]===[Str2]', 'block_stringEqual'),
+                        text: Scratch.translate({ default: '[Str1]===[Str2]', id: 'block_stringEqual' }),
                         opcode: 'stringEqual',
                         arguments: {
                             Str1: {
@@ -338,7 +317,7 @@
                     // 字符串大小写转换
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Convert[Str] to [Type]', 'block_stringTurn'),
+                        text: Scratch.translate({ default: 'Convert[Str] to [Type]', id: 'block_stringTurn' }),
                         opcode: 'stringTurn',
                         arguments: {
                             Str: {
@@ -355,10 +334,7 @@
                     // Unicode转字符
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            '[Unicode] corresponds to Str',
-                            'block_unicodeToString'
-                        ),
+                        text: Scratch.translate({ default: '[Unicode] corresponds to Str', id: 'block_unicodeToString' }),
                         opcode: 'unicodeToString',
                         arguments: {
                             Unicode: {
@@ -371,10 +347,7 @@
                     // 字符转Unicode
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            '[Str] corresponds to Unicode',
-                            'block_stringToUnicode'
-                        ),
+                        text: Scratch.translate({ default: '[Str] corresponds to Unicode', id: 'block_stringToUnicode' }),
                         opcode: 'stringToUnicode',
                         arguments: {
                             Str: {
@@ -387,10 +360,7 @@
                     // 字符串截取
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            '[Str] of [num1] to [num2]',
-                            'block_returnStringRange'
-                        ),
+                        text: Scratch.translate({ default: '[Str] of [num1] to [num2]', id: 'block_returnStringRange' }),
                         opcode: 'returnStringRange',
                         arguments: {
                             Str: {
@@ -409,12 +379,12 @@
                     },
 
                     // ========== 其他操作 ==========
-                    this.createLabel('Other Operation', 'groupName4'),
+                    { blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'Other Operation', id: 'groupName4' }) },
 
                     // 返回数学常数
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Return[Value]', 'block_constNum'),
+                        text: Scratch.translate({ default: 'Return[Value]', id: 'block_constNum' }),
                         opcode: 'constNum',
                         arguments: {
                             Value: {
@@ -427,7 +397,7 @@
                     // 返回特殊字符串
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Return[Value]', 'block_constString'),
+                        text: Scratch.translate({ default: 'Return[Value]', id: 'block_constString' }),
                         opcode: 'constString',
                         arguments: {
                             Value: {
@@ -440,7 +410,7 @@
                     // 返回特殊类型值
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Return[Value]', 'block_constType'),
+                        text: Scratch.translate({ default: 'Return[Value]', id: 'block_constType' }),
                         opcode: 'constType',
                         arguments: {
                             Value: {
@@ -453,7 +423,7 @@
                     // 类型转换
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Convert[Value] to [Type]', 'block_toValue'),
+                        text: Scratch.translate({ default: 'Convert[Value] to [Type]', id: 'block_toValue' }),
                         opcode: 'toValue',
                         arguments: {
                             Value: {
@@ -470,10 +440,7 @@
                     // 生成随机ID
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate(
-                            'Return the new id with [num] digits',
-                            'block_returnNewId'
-                        ),
+                        text: Scratch.translate({ default: 'Return the new id with [num] digits', id: 'block_returnNewId' }),
                         opcode: 'returnNewId',
                         arguments: {
                             num: {
@@ -486,7 +453,7 @@
                     // 复制到剪贴板
                     {
                         blockType: Scratch.BlockType.COMMAND,
-                        text: this.translate('Copy[Str] to Clipboard', 'block_copyString'),
+                        text: Scratch.translate({ default: 'Copy[Str] to Clipboard', id: 'block_copyString' }),
                         opcode: 'copyString',
                         arguments: {
                             Str: {
@@ -499,27 +466,13 @@
                     // 读取剪贴板
                     {
                         blockType: Scratch.BlockType.REPORTER,
-                        text: this.translate('Clipboard Content', 'block_clipboardString'),
+                        text: Scratch.translate({ default: 'Clipboard Content', id: 'block_clipboardString' }),
                         opcode: 'clipboardString',
                     },
                 ],
 
                 menus: this._createMenus()
             };
-        }
-
-        createLabel(defaultText, id) {
-            return {
-                blockType: Scratch.BlockType.LABEL,
-                text: this.translate(defaultText, id),
-            };
-        }
-
-        translate(defaultText, id) {
-            return Scratch.translate({
-                default: defaultText,
-                id: id,
-            });
         }
 
         _createMenus() {
@@ -547,14 +500,14 @@
 
                 // 数据类型菜单
                 ConstType: [
-                    { text: this.translate('Number', 'menu_typeNumber'), value: 'Number' },
-                    { text: this.translate('String', 'menu_typeString'), value: 'String' },
+                    { text: Scratch.translate({ default: 'Number', id: 'menu_typeNumber' }), value: 'Number' },
+                    { text: Scratch.translate({ default: 'String', id: 'menu_typeString' }), value: 'String' },
                 ],
 
                 // 最大/最小类型菜单
                 ConstTypeBigSmall: [
-                    { text: this.translate('Highest', 'menu_typeBig'), value: 'Highest' },
-                    { text: this.translate('Lowest', 'menu_typeSmall'), value: 'Lowest' },
+                    { text: Scratch.translate({ default: 'Highest', id: 'menu_typeBig' }), value: 'Highest' },
+                    { text: Scratch.translate({ default: 'Lowest', id: 'menu_typeSmall' }), value: 'Lowest' },
                 ],
 
                 // 特殊值类型菜单
@@ -569,11 +522,11 @@
                 // 字符串转换类型菜单
                 ConstStrType: [
                     {
-                        text: this.translate('Uppercase', 'menu_typeStrBig'),
+                        text: Scratch.translate({ default: 'Uppercase', id: 'menu_typeStrBig' }),
                         value: 'Uppercase',
                     },
                     {
-                        text: this.translate('Lowercase', 'menu_typeStrSmall'),
+                        text: Scratch.translate({ default: 'Lowercase', id: 'menu_typeStrSmall' }),
                         value: 'Lowercase',
                     },
                 ],
