@@ -51,6 +51,28 @@
         "easyblock@menu_typeBig": "较大",
         "easyblock@menu_typeSmall": "较小",
         "easyblock@menu_typeStrBig": "大写",
-        "easyblock@menu_typeStrSmall": "小写"
+        "easyblock@menu_typeStrSmall": "小写",
+
+        "stringtools@extensionName":"字符串处理",
+        "stringtools@extensionDescription":"让处理字符串更加便利",
+        "stringtools@group.tools": "积木",
+        "stringtools@group.setting": "设置",
+        "stringtools@menu.upperCase":"大写",
+        "stringtools@menu.lowerCase":"小写",
+        "stringtools@block.isInclude":"[Str1]是否包含[Str2]",
+        "stringtools@block.reverse":"反转[Str]",
+        "stringtools@block.isSymmetry":"[Str]是否对称",
+        "stringtools@block.toCase":"将[Str]转换为[Type]",
+        "stringtools@block.isCase":"[Str]是否为[Type]",
+        "stringtools@block.deleteSpace":"删除[Str]中的所有空格",
+        "stringtools@block.deleteSpace2":"删除[Str]开头和结尾的空格",
+        "stringtools@block.deleteChar":"删除[Str]中的[Char]",
+        "stringtools@block.deleteCharRange":"删除[Str]中的第[num1]到[num2]个字符",
+        "stringtools@block.deleteCharRange2":"删除[Str]中的第[num]个字符",
+        "stringtools@block.setStringStart":"设置字符串第一个字符位置为[num]",
+        "stringtools@block.getStringStart":"返回字符串第一个字符位置",
+        "stringtools@block.replaceChar":"替换[Str]中的[Char]为[Char2]",
+        "stringtools@block.returnStringRange":"[Str]中的第[num1]到[num2]个字符"
+
     }
 }
