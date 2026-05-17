@@ -6,7 +6,7 @@
 
 (function (Scratch) {
     // String Tools
-    var startPosition = 0;
+    var startPosition = 1;
 
     class StringTools {
 
@@ -211,6 +211,173 @@
                             }
                         },
                     },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'replaceString',
+                        text: Scratch.translate({ default: 'Replace [Str2] in [Str] with [Str3]', id: 'block.replaceString' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'p'
+                            },
+                            Str3: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'P'
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'replaceStringRange',
+                        text: Scratch.translate({ default: 'Replace characters [num1] to [num2] in [Str] with [Str3]', id: 'block.replaceStringRange' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple'
+                            },
+                            num1: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1
+                            },
+                            num2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 3
+                            },
+                            Str3: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'P'
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'replaceStringRange2',
+                        text: Scratch.translate({ default: 'Replace character [num] in [Str] with [Str2]', id: 'block.replaceStringRange2' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple'
+                            },
+                            num: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'P'
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'strAppearNum',
+                        text: Scratch.translate({ default: 'Return number of times [Str2] appears in [Str]', id: 'block.strAppearNum' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'p'
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'splitStringItem',
+                        text: Scratch.translate({ default: 'Return all items of [Str] split by [Str2]', id: 'block.splitStringItem' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple.banana'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: '.'
+                            },
+                            num: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'splitStringNum',
+                        text: Scratch.translate({ default: 'Return number of items in [Str] split by [Str2]', id: 'block.splitStringNum' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple.banana'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: '.'
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'splitString',
+                        text: Scratch.translate({ default: 'Return [num]th items of [Str] split by [Str2]', id: 'block.splitString' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple.banana'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: '.'
+                            },
+                            num: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'repairString',
+                        text: Scratch.translate({ default: 'Repair [Str1] with [Str2] at [Position] to [Length]', id: 'block.repairString' }),
+                        arguments: {
+                            Str1: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'str'
+                            },
+                            Str2: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 's'
+                            },
+                            Position: {
+                                type: Scratch.ArgumentType.STRING,
+                                menu: 'constPosition'
+                            },
+                            Length: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10
+                            }
+                        },
+                    },
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'repeatString',
+                        text: Scratch.translate({ default: 'Repeat [num] times [Str]', id: 'block.repeatString' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'str'
+                            },
+                            num: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 3
+                            }
+                        },
+                    },
 
                     {blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'Setting', id: 'group.setting' })},
                     {
@@ -240,6 +407,10 @@
                         { text: '0', value: 0 },
                         { text: '1', value: 1 },
                         
+                    ],
+                    constPosition: [
+                        { text: Scratch.translate({ default: 'Start', id: 'menu.start' }), value: 'start' },
+                        { text: Scratch.translate({ default: 'End', id: 'menu.end' }), value: 'end' },
                     ]
                 },
 
@@ -342,7 +513,76 @@
             return Str.slice(num1 - startPosition, num2 + 1 - startPosition);
         }
 
+        replaceString(args) {
+            let { Str, Str2, Str3 } = args;
+            Str = Str.toString();
+            Str2 = Str2.toString();
+            Str3 = Str3.toString();
+            return Str.replace(new RegExp(Str2, 'g'), Str3);
+        }
+        
+        replaceStringRange(args) {
+            let { Str, num1, num2, Str3 } = args;
+            Str = Str.toString();
+            return Str.slice(0, num1 - startPosition) + Str3 + Str.slice(num2);
+        }
+        
+        replaceStringRange2(args) {
+            let { Str, num, Str2 } = args;
+            Str = Str.toString();
+            return Str.slice(0, num - startPosition) + Str2 + Str.slice(num - startPosition + 1);
+        }
+        
+        strAppearNum(args) {
+            let { Str, Str2 } = args;
+            Str = Str.toString();
+            Str2 = Str2.toString();
+            return Str.split(Str2).length - 1;
+        }
+        
+        splitString(args) {
+            let { Str, Str2, num } = args;
+            Str = Str.toString();
+            Str2 = Str2.toString();
+            return Str.split(Str2)[num - 1];
+        }
+        
+        splitStringItem(args) {
+            let { Str, Str2 } = args;
+            Str = Str.toString();
+            Str2 = Str2.toString();
+            return Str.split(Str2);
+        }
 
+        splitStringNum(args) {
+            let { Str, Str2 } = args;
+            Str = Str.toString();
+            Str2 = Str2.toString();
+            return Str.split(Str2).length;
+        }
+        
+        repairString(args) {
+            let { Str1, Str2, Position, Length } = args;
+            Str1 = Str1.toString();
+            Str2 = Str2.toString();
+            Position = Position.toString();
+            Length = parseInt(Length, 10) || 0;
+            const paddingLength = Math.max(0, Length - Str1.length);
+            const padding = Str2.repeat(Math.ceil(paddingLength / Str2.length)).slice(0, paddingLength);
+            if(Position === 'start') {
+                return padding + Str1;
+            }
+            if(Position === 'end') {
+                return Str1 + padding;
+            }
+            return Str1;
+        }
+
+        repeatString(args) {
+            let { Str, num } = args;
+            Str = Str.toString();
+            return Str.repeat(num);
+        }
     }
 
     Scratch.extensions.register(new StringTools());

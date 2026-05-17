@@ -12,6 +12,7 @@
         "colortools@randomColor": "随机颜色",
         "colortools@gradient": "渐变色 [COLOR1] [COLOR2] 位置 [POS]%",
         "colortools@complementary": "互补色 [COLOR]",
+
         "easyblock@extensionName": "便利积木+",
         "easyblock@extensionDescription": "使代码运行更加简便",
         "easyblock@groupName1": "布尔值判断",
@@ -59,6 +60,8 @@
         "stringtools@group.setting": "设置",
         "stringtools@menu.upperCase":"大写",
         "stringtools@menu.lowerCase":"小写",
+        "stringtools@menu.start":"开头",
+        "stringtools@menu.end":"结尾",
         "stringtools@block.isInclude":"[Str1]是否包含[Str2]",
         "stringtools@block.reverse":"反转[Str]",
         "stringtools@block.isSymmetry":"[Str]是否对称",
@@ -72,7 +75,15 @@
         "stringtools@block.setStringStart":"设置字符串第一个字符位置为[num]",
         "stringtools@block.getStringStart":"返回字符串第一个字符位置",
         "stringtools@block.replaceChar":"替换[Str]中的[Char]为[Char2]",
-        "stringtools@block.returnStringRange":"[Str]中的第[num1]到[num2]个字符"
-
+        "stringtools@block.returnStringRange":"[Str]中的第[num1]到[num2]个字符",
+        "stringtools@block.replaceString":"替换[Str]中的[Str2]为[Str3]",
+        "stringtools@block.replaceStringRange":"替换[Str]中的第[num1]到[num2]个字符为[Str3]",
+        "stringtools@block.replaceStringRange2":"替换[Str]中的第[num]个字符为[Str2]",
+        "stringtools@block.strAppearNum":"[Str]中[Str2]出现的次数",
+        "stringtools@block.splitString":"将[Str]按[Str2]分割，取得第[num]项",
+        "stringtools@block.splitStringNum":"将[Str]按[Str2]分割，取得项数",
+        "stringtools@block.splitStringItem":"将[Str]按[Str2]分割，取得所有项",
+        "stringtools@block.repairString":"在[Str1]的[Position]中填充[Str2]到长度为[Length]的字符串",
+        "stringtools@block.repeatString":"重复[num]个[Str]"
     }
 }
