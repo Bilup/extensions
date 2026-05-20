@@ -83,7 +83,7 @@
         "stringtools@block.splitString":"将[Str]按[Str2]分割，取得第[num]项",
         "stringtools@block.splitStringNum":"将[Str]按[Str2]分割，取得项数",
         "stringtools@block.splitStringItem":"将[Str]按[Str2]分割，取得所有项",
-        "stringtools@block.repairString":"在[Str1]的[Position]中填充[Str2]到长度为[Length]的字符串",
+        "stringtools@block.repairString":"在[Str1]的[Position]中填充[Str2]到长度[Length]",
         "stringtools@block.repeatString":"重复[num]个[Str]"
     }
 }

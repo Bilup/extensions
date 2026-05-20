@@ -21,9 +21,9 @@
             return {
                 id: 'easyblock',
                 name: Scratch.translate({ default: 'EasyBlock+', id: 'extensionName' }),
-                color1: '#00d1ff',
-                color2: '#00719e',
-                color3: '#063d61',
+                color1: '#3196d1',
+                color2: '#275c99',
+                color3: '#275472',
                 description: Scratch.translate({ default: 'Provide convenient blocks for Scratch users', id: 'extensionDescription' }),
 
                 blocks: [

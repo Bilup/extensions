@@ -51,6 +51,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'reverse',
@@ -72,6 +73,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'toCase',
@@ -102,6 +104,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'deleteSpace',
@@ -173,6 +176,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'replaceChar',
@@ -189,25 +193,6 @@
                             Char2: {
                                 type: Scratch.ArgumentType.STRING,
                                 defaultValue: 'P'
-                            }
-                        },
-                    },
-                    {
-                        blockType: Scratch.BlockType.REPORTER,
-                        opcode: 'returnStringRange',
-                        text: Scratch.translate({ default: 'Return characters [num1] to [num2] in [Str]', id: 'block.returnStringRange' }),
-                        arguments: {
-                            Str: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'apple'
-                            },
-                            num1: {
-                                type: Scratch.ArgumentType.NUMBER,
-                                defaultValue: 1
-                            },
-                            num2: {
-                                type: Scratch.ArgumentType.NUMBER,
-                                defaultValue: 3
                             }
                         },
                     },
@@ -272,6 +257,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'strAppearNum',
@@ -287,6 +273,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'splitStringItem',
@@ -340,6 +327,7 @@
                             }
                         },
                     },
+                    '---',
                     {
                         blockType: Scratch.BlockType.REPORTER,
                         opcode: 'repairString',
@@ -378,7 +366,26 @@
                             }
                         },
                     },
-
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        opcode: 'returnStringRange',
+                        text: Scratch.translate({ default: 'Return characters [num1] to [num2] in [Str]', id: 'block.returnStringRange' }),
+                        arguments: {
+                            Str: {
+                                type: Scratch.ArgumentType.STRING,
+                                defaultValue: 'apple'
+                            },
+                            num1: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1
+                            },
+                            num2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 3
+                            }
+                        },
+                    },
+                    
                     {blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'Setting', id: 'group.setting' })},
                     {
                         blockType: Scratch.BlockType.COMMAND,
