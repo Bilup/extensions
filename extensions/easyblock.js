@@ -1,6 +1,6 @@
 // Name: Easy Block+
 // ID: easyblock
-// Description: Make Scratch users more convenient
+// Description: Make creation simpler and more convenient.
 // By: DL_Grass <https://github.com/DLGrass>
 // License: MIT
 
@@ -21,10 +21,10 @@
             return {
                 id: 'easyblock',
                 name: Scratch.translate({ default: 'EasyBlock+', id: 'extensionName' }),
-                color1: '#3196d1',
-                color2: '#275c99',
-                color3: '#275472',
-                description: Scratch.translate({ default: 'Provide convenient blocks for Scratch users', id: 'extensionDescription' }),
+                color1: '#36cefc',
+                color2: '#3b8deb',
+                color3: '#377faf',
+                description: Scratch.translate({ default: 'Make creation simpler and more convenient.', id: 'extensionDescription' }),
 
                 blocks: [
                     // ========== 布尔值操作 ==========
