@@ -17,30 +17,30 @@
     //     let t = Number(a);let t2 = Number(b);let t3 = Number(c);
     //     return (t2 - t) * Math.sin(((Math.PI /2) / 100 * t3));       
     // }
-    function log(a,b){
+    function log(a, b) {
         return Math.log(b) / Math.log(a);
     }
-    function nitian(a){
-        return a ** a ** a
+    function nitian(a) {
+        return a ** a ** a;
     }
     function gamma(z) {
-    const p = [
-        676.5203681218851, -1259.1392167224028, 771.32342877765313,
-        -176.61502916214059, 12.507343278686905, -0.13857109526572012,
-        9.9843695780195716e-6, 1.5056327351493116e-7
-    ];
-    let x = z;
-    let y = x;
-    if (x < 0.5) {
-        return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
-    }
-    x -= 1;
-    let a = p[0];
-    const t = x + 7 + 0.5;
-    for (let i = 1; i < p.length; i++) {
-        a += p[i] / (x + i);
-    }
-    return Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;
+        const p = [
+            676.5203681218851, -1259.1392167224028, 771.32342877765313,
+            -176.61502916214059, 12.507343278686905, -0.13857109526572012,
+            9.9843695780195716e-6, 1.5056327351493116e-7
+        ];
+        let x = z;
+        let y = x;
+        if (x < 0.5) {
+            return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
+        }
+        x -= 1;
+        let a = p[0];
+        const t = x + 7 + 0.5;
+        for (let i = 1; i < p.length; i++) {
+            a += p[i] / (x + i);
+        }
+        return Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;
     }
 
     // function factorialDecimal(n) {
@@ -50,373 +50,376 @@
 
     class approaches {
         getInfo() {
-            return{
-                id:"approaches",
-                name:"接近!",
-                description:"非线性接近函数",
-                
-                color1:"#5b15cc",
-                color2:"#5b15cc",
-                color3:"#6717e7",
-                blockIconURI:block_icon,
+            return {
+                id: "approaches",
+                name: Scratch.translate({'default': 'Approaches!', 'id': 'extensionName' }),
+                description: Scratch.translate({'default': 'Nonlinear approach functions', 'id': 'extensionDescription' }),
 
-                blocks:[
+                color1: "#5b15cc",
+                color2: "#5b15cc",
+                color3: "#6717e7",
+                blockIconURI: block_icon,
+
+                blocks: [
                     {
-                        opcode:'label2',
-                        blockType:Scratch.BlockType.LABEL,  
-                        text:'🔁递归接近',
-                    },    
+                        opcode: 'label2',
+                        blockType: Scratch.BlockType.LABEL,
+                        text: Scratch.translate({'default': '🔁Recursive Approach', 'id': 'label.recursive' }),
+                    },
                     {
-                        opcode:'block1',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'常规接近让[temp]接近[temp2]，递归速率为[temp3]',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'block1',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Approach [temp] to [temp2] at rate [temp3]', 'id': 'block.block1' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:5,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 5,
                             },
                         }
                     },
-                    
+
                     {
-                        opcode:'label2',
-                        blockType:Scratch.BlockType.LABEL,  
-                        text:'🔁递归回弹',
-                    },    
-                    {
-                        opcode:'block2_1',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过正弦接近算法让[temp]回弹到[temp2]，递归速率为[temp3]',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
-                            },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
-                            },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:5,
-                            },
-                        }
+                        opcode: 'label2',
+                        blockType: Scratch.BlockType.LABEL,
+                        text: Scratch.translate({'default': '🔁Recursive Rebound', 'id': 'label.rebound' }),
                     },
                     {
-                        opcode:'label3',
-                        blockType:Scratch.BlockType.LABEL,  
-                        text:'📈函数曲线接近（搭配上面任意一个递归块套入第三个参数递归使用）',
-                    },   
-                    {
-                        opcode:'blockHeyiwei',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'线性让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'block2_1',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Rebound [temp] to [temp2] with sine at rate [temp3]', 'id': 'block.block2_1' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
-                            },
-                        }
-                    }, 
-                    {
-                        opcode:'block2',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过正弦接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
-                            },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
-                            },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 5,
                             },
                         }
                     },
                     {
-                        opcode:'block3',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过对数接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'label3',
+                        blockType: Scratch.BlockType.LABEL,
+                        text: Scratch.translate({'default': '📈Function Curve Approach', 'id': 'label.curve' }),
+                    },
+                    {
+                        opcode: 'blockHeyiwei',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Linear approach [temp] to [temp2] by [temp3]%', 'id': 'block.blockHeyiwei' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
                             },
                         }
                     },
                     {
-                        opcode:'block4',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过指数接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'block2',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Sine approach [temp] to [temp2] by [temp3]%', 'id': 'block.block2' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:75,
-                            },
-                        }
-                    },
-                    {
-                        opcode:'block5',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过幂指函数接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
-                            },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
-                            },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:90,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
                             },
                         }
                     },
                     {
-                        opcode:'block6',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过二次函数接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'block3',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Logarithmic approach [temp] to [temp2] by [temp3]%', 'id': 'block.block3' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
-                            },
-                        }
-                    },
-                    {
-                        opcode:'block7',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过反正弦接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
-                            },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
-                            },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
                             },
                         }
                     },
                     {
-                        opcode:'block8',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过双曲正切接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:0,
+                        opcode: 'block4',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Exponential approach [temp] to [temp2] by [temp3]%', 'id': 'block.block4' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:10,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:50,
-                            },
-                        }
-                    },
-                    {
-                        opcode:'label4',
-                        blockType:Scratch.BlockType.LABEL,  
-                        text:'🔧其他工具',
-                    },   
-                    
-                    {
-                        opcode:'other1',
-                        blockType:Scratch.BlockType.BOOLEAN,  
-                        text:'[temp]的数据存在溢出或合法？',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:111111111111,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 75,
                             },
                         }
                     },
                     {
-                        opcode:'other2',
-                        blockType:Scratch.BlockType.COMMAND,  
-                        text:'设置数据溢出的大小为[temp]',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:1e+20,
+                        opcode: 'block5',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Power approach [temp] to [temp2] by [temp3]%', 'id': 'block.block5' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
+                            },
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
+                            },
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 90,
                             },
                         }
                     },
                     {
-                        opcode:'other3',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'在[temp]~[temp2]之间时返回值[temp3]',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:2000,
+                        opcode: 'block6',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Quadratic approach [temp] to [temp2] by [temp3]%', 'id': 'block.block6' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:3000,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:4000,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
                             },
                         }
                     },
                     {
-                        opcode:'label5',
-                        blockType:Scratch.BlockType.LABEL,  
-                        text:'🔧其他工具',
-                    },   
+                        opcode: 'block7',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Arcsine approach [temp] to [temp2] by [temp3]%', 'id': 'block.block7' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
+                            },
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
+                            },
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
+                            },
+                        }
+                    },
                     {
-                        opcode:'caidan1',
-                        blockType:Scratch.BlockType.REPORTER,  
-                        text:'通过幂幂指函数接近算法让[temp]接近[temp2]，接近到[temp3]%',
-                        arguments:{
-                            temp:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:1391,
+                        opcode: 'block8',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Tanh approach [temp] to [temp2] by [temp3]%', 'id': 'block.block8' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 0,
                             },
-                            temp2:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:2233,
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 10,
                             },
-                            temp3:{
-                                type:Scratch.ArgumentType.NUMBER,
-                                defaultValue:97.8,
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 50,
+                            },
+                        }
+                    },
+                    {
+                        opcode: 'label4',
+                        blockType: Scratch.BlockType.LABEL,
+                        text: Scratch.translate({'default': '🔧Other Tools', 'id': 'label.tools' }),
+                    },
+
+                    {
+                        opcode: 'other1',
+                        blockType: Scratch.BlockType.BOOLEAN,
+                        text: Scratch.translate({'default': 'Is [temp] out of bounds?', 'id': 'block.other1' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 111111111111,
+                            },
+                        }
+                    },
+                    {
+                        opcode: 'other2',
+                        blockType: Scratch.BlockType.COMMAND,
+                        text: Scratch.translate({'default': 'Set overflow limit to [temp]', 'id': 'block.other2' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1e+20,
+                            },
+                        }
+                    },
+                    {
+                        opcode: 'other3',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Clamp [temp3] between [temp] and [temp2]', 'id': 'block.other3' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 2000,
+                            },
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 3000,
+                            },
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 4000,
+                            },
+                        }
+                    },
+                    {
+                        opcode: 'label5',
+                        blockType: Scratch.BlockType.LABEL,
+                        text: Scratch.translate({'default': '🔧Special', 'id': 'label.special' }),
+                    },
+                    {
+                        opcode: 'caidan1',
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({'default': 'Tetration approach [temp] to [temp2] by [temp3]%', 'id': 'block.caidan1' }),
+                        arguments: {
+                            temp: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 1391,
+                            },
+                            temp2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 2233,
+                            },
+                            temp3: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 97.8,
                             },
                         }
                     },
 
                 ],
-                menus:{
-                    sanjiao:{
-                        acceptReporters:false,
-                        items:['正弦','余弦']
+                menus: {
+                    sanjiao: {
+                        acceptReporters: false,
+                        items: [
+                            Scratch.translate({'default': 'Sine', 'id': 'menu.sine' }),
+                            Scratch.translate({'default': 'Cosine', 'id': 'menu.cosine' })
+                        ]
                     }
                 }
             }
         }
-        block1(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
+        block1(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
             return t + (t2 - t) / t3;
-        }    
-        block2(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
-            
-            return (t2 - t) * Math.sin(((Math.PI /2) / 100 * t3)) + t;
-        }   
+        }
+        block2(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
 
-        blockHeyiwei(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
+            return (t2 - t) * Math.sin(((Math.PI / 2) / 100 * t3)) + t;
+        }
+
+        blockHeyiwei(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
             return (t2 - t) * (t3 / 100) + t;
         }
-        block3(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);let t4 =10;
-            return (t2 - t) * (log(t4,104 / 100 * t3) / log(t4,104)) + t;
+        block3(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3); let t4 = 10;
+            return (t2 - t) * (log(t4, 104 / 100 * t3) / log(t4, 104)) + t;
 
-        }     
-        block4(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
-            return (t2 - t) *  (2 ** (8 / 100 * t3) / (2**8)) + t;
         }
-        block5(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
-            return (t2 - t) *  (((4 / 100 * t3) ** (4 / 100 * t3)) / (4 ** 4)) + t;
-        }     
-        block6(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
-            return  (t2 - t) *  ( (12 / 100 * t3)**2/ 12**2) + t;
+        block4(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
+            return (t2 - t) * (2 ** (8 / 100 * t3) / (2 ** 8)) + t;
         }
-        block7(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
+        block5(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
+            return (t2 - t) * (((4 / 100 * t3) ** (4 / 100 * t3)) / (4 ** 4)) + t;
+        }
+        block6(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
+            return (t2 - t) * ((12 / 100 * t3) ** 2 / 12 ** 2) + t;
+        }
+        block7(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
             return ((t2 - t) * Math.asin((1 / 100 * t3)) + t) / (Math.PI * 0.5);
         }
-        block8(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
+        block8(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
             return ((t2 - t) * Math.tanh(20 / 100 * t3)) + t;
         }
-        block2_1(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2) / rebound_constant;let t3 = Number(args.temp3);
-            return (t2 - t) * Math.sin(((Math.PI /2) / t3)) + t;
-        }    
-        caidan1(args){
-            let t = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);let t4 =10;
-            return (t2 - t) *  ((nitian(2.3 / 100 * t3)) / (nitian(2.3))) + t;
-        }    
-        other1(args){
-            if(Number(args.temp) > max_number || Number(args.temp) < (max_number * -1) || Number.isNaN(args.temp)){
+        block2_1(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2) / rebound_constant; let t3 = Number(args.temp3);
+            return (t2 - t) * Math.sin(((Math.PI / 2) / t3)) + t;
+        }
+        caidan1(args) {
+            let t = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3); let t4 = 10;
+            return (t2 - t) * ((nitian(2.3 / 100 * t3)) / (nitian(2.3))) + t;
+        }
+        other1(args) {
+            if (Number(args.temp) > max_number || Number(args.temp) < (max_number * -1) || Number.isNaN(args.temp)) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }
-        other2(args){
+        other2(args) {
             max_number = args.temp;
         }
-        other3(args){
-            let t1 = Number(args.temp);let t2 = Number(args.temp2);let t3 = Number(args.temp3);
-            if(t3 <= t2 && t3 > t1){
+        other3(args) {
+            let t1 = Number(args.temp); let t2 = Number(args.temp2); let t3 = Number(args.temp3);
+            if (t3 <= t2 && t3 > t1) {
                 return t3;
-            }else{
-                if(t3 > t2){
+            } else {
+                if (t3 > t2) {
                     return t2;
-                }else{
+                } else {
                     return t1;
                 }
             }
-            
+
         }
 
     }
