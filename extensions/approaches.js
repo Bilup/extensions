@@ -69,7 +69,7 @@
                     {
                         opcode: 'block1',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Approach [temp] to [temp2] at rate [temp3]', 'id': 'block.block1' }),
+                        text: Scratch.translate({'default': 'Approach [temp] to [temp2] at rate [temp3]', 'id': 'block1' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -94,7 +94,7 @@
                     {
                         opcode: 'block2_1',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Rebound [temp] to [temp2] with sine at rate [temp3]', 'id': 'block.block2_1' }),
+                        text: Scratch.translate({'default': 'Rebound [temp] to [temp2] with sine at rate [temp3]', 'id': 'block2_1' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -118,7 +118,7 @@
                     {
                         opcode: 'blockHeyiwei',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Linear approach [temp] to [temp2] by [temp3]%', 'id': 'block.blockHeyiwei' }),
+                        text: Scratch.translate({'default': 'Linear approach [temp] to [temp2] by [temp3]%', 'id': 'blockHeyiwei' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -137,7 +137,7 @@
                     {
                         opcode: 'block2',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Sine approach [temp] to [temp2] by [temp3]%', 'id': 'block.block2' }),
+                        text: Scratch.translate({'default': 'Sine approach [temp] to [temp2] by [temp3]%', 'id': 'block2' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -156,7 +156,7 @@
                     {
                         opcode: 'block3',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Logarithmic approach [temp] to [temp2] by [temp3]%', 'id': 'block.block3' }),
+                        text: Scratch.translate({'default': 'Logarithmic approach [temp] to [temp2] by [temp3]%', 'id': 'block3' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -175,7 +175,7 @@
                     {
                         opcode: 'block4',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Exponential approach [temp] to [temp2] by [temp3]%', 'id': 'block.block4' }),
+                        text: Scratch.translate({'default': 'Exponential approach [temp] to [temp2] by [temp3]%', 'id': 'block4' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -194,7 +194,7 @@
                     {
                         opcode: 'block5',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Power approach [temp] to [temp2] by [temp3]%', 'id': 'block.block5' }),
+                        text: Scratch.translate({'default': 'Power approach [temp] to [temp2] by [temp3]%', 'id': 'block5' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -213,7 +213,7 @@
                     {
                         opcode: 'block6',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Quadratic approach [temp] to [temp2] by [temp3]%', 'id': 'block.block6' }),
+                        text: Scratch.translate({'default': 'Quadratic approach [temp] to [temp2] by [temp3]%', 'id': 'block6' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -232,7 +232,7 @@
                     {
                         opcode: 'block7',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Arcsine approach [temp] to [temp2] by [temp3]%', 'id': 'block.block7' }),
+                        text: Scratch.translate({'default': 'Arcsine approach [temp] to [temp2] by [temp3]%', 'id': 'block7' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
@@ -251,7 +251,7 @@
                     {
                         opcode: 'block8',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Tanh approach [temp] to [temp2] by [temp3]%', 'id': 'block.block8' }),
+                        text: Scratch.translate({'default': 'Tanh approach [temp] to [temp2] by [temp3]%', 'id': 'block8' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
