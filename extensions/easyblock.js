@@ -277,6 +277,22 @@
                             }
                         }
                     },
+                    // 随机加减
+                    {
+                        blockType: Scratch.BlockType.REPORTER,
+                        text: Scratch.translate({ default: '[Num1], random add or minus [Num2]', id: 'block_numRandomAddMinus' }),
+                        opcode: 'numRandomAddMinus',
+                        arguments: {
+                            Num1: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 100,
+                            },
+                            Num2: {
+                                type: Scratch.ArgumentType.NUMBER,
+                                defaultValue: 20,
+                            }
+                        }
+                    },
 
                     // ========== 字符串操作 ==========
                     { blockType: Scratch.BlockType.LABEL, text: Scratch.translate({ default: 'String Operation', id: 'groupName3' }) },
@@ -838,6 +854,12 @@
             } catch (error) {
                 return '';
             }
+        }
+        
+        // 随机加减
+        numRandomAddMinus(args) {
+            const { Num1 = 0, Num2 = 0 } = args;
+            return Num1 + (Math.random() - 0.5) * Num2;
         }
     }
 

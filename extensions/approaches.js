@@ -1,52 +1,26 @@
 // Name: Approaches!
 // ID: approaches
-// Description: None(not completed yet)
+// Description: Nonlinear approach functions.
 // By: DL_Grass <https://github.com/DLGrass>
-// Original: Blue3 <https://space.bilibili.com/25786611>
+// Original: 蓝立方Blue3 <https://space.bilibili.com/25786611>
 // License: MIT
 
 (function (Scratch) {
     'use strict';
 
-    // 暂时还有一些没改完的东西(比如国际化翻译)，所以先不要用这个扩展
-
     const block_icon = "https://m.ccw.site/creator-college/images/95c1d774ecfb8191c9b58c6ae4faae8a.png";
+
     const rebound_constant = 0.46410161513775444;
+
     let max_number = 1e+10;
-    // function test1(a,b,c){
-    //     let t = Number(a);let t2 = Number(b);let t3 = Number(c);
-    //     return (t2 - t) * Math.sin(((Math.PI /2) / 100 * t3));       
-    // }
+
     function log(a, b) {
         return Math.log(b) / Math.log(a);
     }
+
     function nitian(a) {
         return a ** a ** a;
     }
-    function gamma(z) {
-        const p = [
-            676.5203681218851, -1259.1392167224028, 771.32342877765313,
-            -176.61502916214059, 12.507343278686905, -0.13857109526572012,
-            9.9843695780195716e-6, 1.5056327351493116e-7
-        ];
-        let x = z;
-        let y = x;
-        if (x < 0.5) {
-            return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
-        }
-        x -= 1;
-        let a = p[0];
-        const t = x + 7 + 0.5;
-        for (let i = 1; i < p.length; i++) {
-            a += p[i] / (x + i);
-        }
-        return Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;
-    }
-
-    // function factorialDecimal(n) {
-    // if (n < 0) return undefined; // Gamma 对负数非整数有定义，但这里简单限制
-    // return gamma(n + 1);
-    // }
 
     class approaches {
         getInfo() {

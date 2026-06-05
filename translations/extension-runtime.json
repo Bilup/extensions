@@ -47,6 +47,7 @@
         "easyblock@block_returnStringRange":"[Str]中的第[num1]到[num2]个字符",
         "easyblock@block_whenBoolCome":"当[Bool]为[TypeBool]时执行",
         "easyblock@block_numFactorial":"[Num]的阶乘",
+        "easyblock@block_numRandomAddMinus":"[Num1],随机加减[Num2]",
         "easyblock@menu_typeNumber": "数值",
         "easyblock@menu_typeString": "字符串",
         "easyblock@menu_typeBig": "较大",
