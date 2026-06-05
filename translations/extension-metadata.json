@@ -5,6 +5,8 @@
         "easyblock@name": "便利积木+",
         "easyblock@description": "让创作更简单，更方便",
         "stringtools@name":"字符串处理",
-        "stringtools@description":"更加便利地处理字符串"
+        "stringtools@description":"更加便利地处理字符串",
+        "approaches@name":"接近!",
+        "approaches@description":"非线性接近函数"
     }
 }
