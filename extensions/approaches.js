@@ -92,7 +92,7 @@
                     {
                         opcode: 'blockHeyiwei',
                         blockType: Scratch.BlockType.REPORTER,
-                        text: Scratch.translate({'default': 'Linear approach [temp] to [temp2] by [temp3]%', 'id': 'block.blockHeyiwei' }),
+                        text: Scratch.translate({'default': 'Linear approach [temp] to [temp2] by [temp3]%', 'id': 'block.blockeyiwei' }),
                         arguments: {
                             temp: {
                                 type: Scratch.ArgumentType.NUMBER,
