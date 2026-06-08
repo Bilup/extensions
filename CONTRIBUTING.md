@@ -69,11 +69,11 @@ Once you choose a license for your extension, [find its SPDX identifier from thi
 All extensions need a metadata comment at the start of the file, before any code. This section gets read by a script, so make sure to follow the format closely.
 
 ```js
-// Name: My Cool Extension
+// Name: ExtensionName
 // ID: extensionid
-// Description: Does a very cool thing. This must have punctuation at the end!
-// By: GarboMuffin <https://scratch.mit.edu/users/GarboMuffin/>
-// Original: TestMuffin
+// Description: ExtensionDescription
+// By: Name <your url>
+// Original: TheOriginalAuthor <original url>
 // License: MPL-2.0
 ```
 

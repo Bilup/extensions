@@ -3,7 +3,7 @@
 The requirements for merging a pull request are:
 
  - Pass the automated checks
- - Get two reviewers to approve it
+ - Get ~~two~~ one reviewer~~s~~ to approve it
 
 **That's it. If GitHub will let you merge it, go ahead and do it.** The rest of this document will try to define what it means to approve a pull request.
 
@@ -50,4 +50,5 @@ Any logic change inside a JavaScript file, even the most trivial one, means that
 
 ## Other things
 
-Ping RyaninCn11 early and often.
+Ping [RyaninCn11](https://github.com/RyaninCn11) early and often.
+~~You can also ping [DL_Grass](https://github.com/DLGrass) if he is not online.~~

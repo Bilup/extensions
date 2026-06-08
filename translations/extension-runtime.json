@@ -109,6 +109,22 @@
         "approaches@block.other3":"在[temp]~[temp2]之间时返回值[temp3]",
         "approaches@block.caidan1":"通过幂幂指函数接近算法让[temp]接近[temp2]，接近到[temp3]%",
         "approaches@menu.sine":"正弦",
-        "approaches@menu.cosine":"余弦"
+        "approaches@menu.cosine":"余弦",
+
+        "encryption@extensionName":"加密",
+        "encryption@extensionDescription":"处理不同需求的文本加密，保护数据安全",
+        "encryption@menu.encrypt":"加密",
+        "encryption@menu.decode":"解密",
+        "encryption@group.base":"Base 加密",
+        "encryption@group.md5":"MD5 加密",
+        "encryption@group.sha":"SHA 加密",
+        "encryption@block.base64":"base64编码[Type] [Str]",
+        "encryption@block.base32":"base32编码[Type] [Str]",
+        "encryption@block.base16":"base16编码[Type] [Str]",
+        "encryption@block.md5_32":"MD5加密32位[Str]",
+        "encryption@block.md5_16":"MD5加密16位[Str]",
+        "encryption@block.sha_256":"SHA256加密[Str]",
+        "encryption@block.sha_512":"SHA512加密[Str]",
+        "encryption@block.sha_3":"SHA3加密[Str]"
     }
 }

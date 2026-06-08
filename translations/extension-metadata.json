@@ -7,6 +7,8 @@
         "stringtools@name":"字符串处理",
         "stringtools@description":"更加便利地处理字符串",
         "approaches@name":"接近!",
-        "approaches@description":"非线性接近函数"
+        "approaches@description":"非线性接近函数",
+        "encryption@name":"加密法",
+        "encryption@description":"处理不同需求的文本加密，保护数据安全"
     }
 }
