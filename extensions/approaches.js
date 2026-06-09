@@ -8,7 +8,7 @@
 (function (Scratch) {
     'use strict';
 
-    const block_icon = "https://m.ccw.site/creator-college/images/95c1d774ecfb8191c9b58c6ae4faae8a.png";
+    // const block_icon = "https://m.ccw.site/creator-college/images/95c1d774ecfb8191c9b58c6ae4faae8a.png";
 
     const rebound_constant = 0.46410161513775444;
 
@@ -29,10 +29,10 @@
                 name: Scratch.translate({'default': 'Approaches!', 'id': 'extensionName' }),
                 description: Scratch.translate({'default': 'Nonlinear approach functions', 'id': 'extensionDescription' }),
 
-                color1: "#5b15cc",
-                color2: "#5b15cc",
-                color3: "#6717e7",
-                blockIconURI: block_icon,
+                color1: "#3b3bf7",
+                color2: "#1425b6",
+                color3: "#110f94",
+                // blockIconURI: block_icon,
 
                 blocks: [
                     {
