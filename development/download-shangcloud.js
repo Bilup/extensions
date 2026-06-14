@@ -39,9 +39,29 @@ function downloadFile(url) {
     });
 }
 
-function hasHeaderComment(content) {
-    const lines = content.trim().split('\n');
-    return lines.length > 0 && lines[0].startsWith('//');
+function hasSkipProcessing(content) {
+    return content.includes('// SkipProcessing: true');
+}
+
+function addSkipProcessing(content) {
+    if (hasSkipProcessing(content)) {
+        return content;
+    }
+
+    const lines = content.split('\n');
+    let headerEndIndex = 0;
+    while (headerEndIndex < lines.length && lines[headerEndIndex].startsWith('//')) {
+        headerEndIndex++;
+    }
+
+    if (headerEndIndex > 0) {
+        lines.splice(headerEndIndex - 1, 0, '// SkipProcessing: true');
+    } else {
+        const header = `// SkipProcessing: true\n\n`;
+        return header + content;
+    }
+
+    return lines.join('\n');
 }
 
 async function main() {
@@ -53,29 +73,17 @@ async function main() {
             throw new Error('下载的内容为空');
         }
 
-        let fullContent;
-        if (hasHeaderComment(content)) {
-            const lines = content.split('\n');
-            let insertIndex = 0;
-            while (insertIndex < lines.length && lines[insertIndex].startsWith('//')) {
-                insertIndex++;
-            }
-            lines.splice(insertIndex - 1, 0, '// SkipProcessing: true');
-            fullContent = lines.join('\n');
-        } else {
-            const header = `// Name: ShangCloud
-// ID: shangcloud
-// Description: ShangCloud extension for Bilup
-// By: YearnStudio <https://api.yearnstudio.cn>
-// License: MIT
-// SkipProcessing: true
-
-`;
-            fullContent = header + content;
-        }
+        const fullContent = addSkipProcessing(content);
 
         await fsPromises.writeFile(OUTPUT_FILE, fullContent, 'utf-8');
         console.log(`扩展文件已保存到: ${OUTPUT_FILE}`);
+        
+        const imagePath = path.join(import.meta.dirname, '../images/shangcloud.png');
+        if (await fsPromises.access(imagePath).then(() => true).catch(() => false)) {
+            console.log(`封面图片已存在: ${imagePath}`);
+        } else {
+            console.log(`警告: 封面图片不存在: ${imagePath}`);
+        }
     } catch (error) {
         console.error('下载失败:', error.message);
         process.exit(1);

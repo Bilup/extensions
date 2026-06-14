@@ -17,4 +17,7 @@ desktop.ini
 .vscode/*
 !.vscode/*.code-snippets
 
+# Shangcloud
+extensions/shangcloud.js
+
 # Tip: .git/info/exclude is your personal gitignore for things that don't belong here
