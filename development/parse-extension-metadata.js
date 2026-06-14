@@ -27,6 +27,7 @@ class Extension {
     this.original = [];
     this.context = "";
     this.scratchCompatible = false;
+    this.skipProcessing = false;
   }
 }
 
@@ -105,6 +106,9 @@ const parseMetadata = (extensionCode) => {
         break;
       case "scratch-compatible":
         metadata.scratchCompatible = value === "true";
+        break;
+      case "skipprocessing":
+        metadata.skipProcessing = value === "true";
         break;
       default:
         // TODO

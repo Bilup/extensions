@@ -180,6 +180,11 @@ class ExtensionFile extends BuildFile {
     let data = await fsPromises.readFile(this.sourcePath, "utf-8");
 
     if (this.mode !== "development") {
+      const metadata = parseMetadata(data);
+      if (metadata.skipProcessing) {
+        return data;
+      }
+
       const dependenciesJS = rewriteExternalToInline(data);
       data = dependenciesJS.js;
 
