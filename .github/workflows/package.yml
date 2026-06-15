@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
-          ref: develop
+          ref: main
 
       - name: Install Node.js
         uses: actions/setup-node@v4
