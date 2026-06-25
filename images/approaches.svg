@@ -6,8 +6,8 @@
     </linearGradient>
   </defs>
   <rect x="0" y="0" width="600" height="300" fill="url(#theme)"></rect>
-  <rect x="225" y="50" width="150" height="150" fill="#eee" rx="25" ry="25"></rect>
-  <g id="svgGroup" stroke-linecap="round" fill-rule="nonzero" fill="#4719b6" stroke="none" stroke-width="0">
+  <rect x="225" y="50" width="150" height="150" fill="#4719b6" rx="25" ry="25"></rect>
+  <g id="svgGroup" stroke-linecap="round" fill-rule="nonzero" fill="#eee" stroke="none" stroke-width="0">
       <path d="M5 61.400L57.400 61.400L57.400 43.900L57.700 43.900L96.500 78.000L57.700 112.100L57.400 112.100L57.400 94.600L5 94.600L5 61.400Z" transform="translate(250,47.5)"/>
   </g>
   <g id="svgGroup" stroke-linecap="round" fill-rule="nonzero" fill="#eee" stroke="none" stroke-width="0">
