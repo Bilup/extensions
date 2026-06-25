@@ -109,6 +109,18 @@
         "approaches@block.other3":"在[temp]~[temp2]之间时返回值[temp3]",
         "approaches@block.caidan1":"通过幂幂指函数接近算法让[temp]接近[temp2]，接近到[temp3]%",
         "approaches@menu.sine":"正弦",
-        "approaches@menu.cosine":"余弦"
+        "approaches@menu.cosine":"余弦",
+        "aiblocks@createInstance":"创建 AI 实例 [INSTANCE]",
+        "aiblocks@defaultInstanceName":"我的AI助手",
+        "aiblocks@deleteInstance":"删除 AI 实例 [INSTANCE]",
+        "aiblocks@createTemplate":"创建配置模板 [NAME] 地址: [URL] Key: [KEY] 模型: [MODEL]",
+        "aiblocks@defaultTemplateName":"我的自定义配置",
+        "aiblocks@bindInstanceToTemplate":"令实例 [INSTANCE] 使用模板 [TEMPLATE]",
+        "aiblocks@askAIInstance":"让实例 [INSTANCE] 提问 [PROMPT]",
+        "aiblocks@defaultPrompt":"你好！",
+        "aiblocks@whenInstanceStreaming":"当 实例 [INSTANCE] 正在吐字时",
+        "aiblocks@whenInstanceCompleted":"当 实例 [INSTANCE] 说完话时",
+        "aiblocks@getInstanceDisplayContent":"实例 [INSTANCE] 当前说的话",
+        "aiblocks@getInstanceStatus":"实例 [INSTANCE] 当前状态"
     }
 }

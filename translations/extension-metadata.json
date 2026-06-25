@@ -9,6 +9,8 @@
         "approaches@name":"接近!",
         "approaches@description":"非线性接近函数",
         "encryption@name":"加密法",
-        "encryption@description":"处理不同需求的文本加密，保护数据安全"
+        "encryption@description":"处理不同需求的文本加密，保护数据安全",
+        "aiblocks@name":"AI 积木",
+        "aiblocks@description":"创建AI实例并使用流式响应与它们交互"
     }
 }
