@@ -416,7 +416,7 @@
             opcode: 'propOfChatHistory',
             blockIconURI: DATA_PROCESSING_URI,
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate({default: "[[PROP] of item [INDEX] of chat history id[ID]", id: "[[PROP]] of item [INDEX] of chat history id[ID]"}),
+            text: Scratch.translate({default: "[PROP] of item [INDEX] of chat history id[ID]", id: "[PROP] of item [INDEX] of chat history id[ID]"}),
             arguments: {
               PROP: {
                 type: Scratch.ArgumentType.STRING,
@@ -449,7 +449,7 @@
             opcode: 'itemOfArray',
             blockIconURI: DATA_PROCESSING_URI,
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate({default: "Item [INDEX] of array[ARRAY]"}),
+            text: Scratch.translate({default: "Item [INDEX] of array[ARRAY]", id: "Item [INDEX] of array[ARRAY]"}),
             arguments: {
               INDEX: {
                 type: Scratch.ArgumentType.NUMBER,
@@ -465,7 +465,7 @@
             opcode: 'itemOfObject',
             blockIconURI: DATA_PROCESSING_URI,
             blockType: Scratch.BlockType.REPORTER,
-            text: Scratch.translate({default: "Item [KEY] of object[OBJECT]"}),
+            text: Scratch.translate({default: "Item [KEY] of object[OBJECT]", id: "Item [KEY] of object[OBJECT]"}),
             arguments: {
               KEY: {
                 type: Scratch.ArgumentType.STRING,
