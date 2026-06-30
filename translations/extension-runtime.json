@@ -139,7 +139,7 @@
         "ai@Stop message from chat [ID]": "停止聊天 [ID] 的消息",
         "ai@Response from chat [ID]": "聊天 [ID] 的响应",
         "ai@Status of chat with id[ID]": "ID为[ID]的聊天状态",
-        "ai@Is chat with id[ID] idle?": "ID为[ID]的聊天是否空闲？",
+        "ai@Is chat with id[ID] idle?": "ID为[ID]的聊天是否空闲?",
         "ai@Common AI": "常用AI",
         "ai@URL of [AI](Anthropic)": "[AI]的URL(Anthropic)",
         "ai@URL of [AI](OpenAI)": "[AI]的URL(OpenAI)",
@@ -170,7 +170,7 @@
         "ai@Chat 1": "聊天1",
         "ai@Preset 1": "预设1",
         "ai@Hello": "你好",
-        "ai@How do you do?": "你好吗？",
+        "ai@How do you do?": "你好吗?",
         "ai@Key1": "键1",
         "ai@Value1": "值1"
     }

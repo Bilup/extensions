@@ -213,7 +213,7 @@
           },
           {
             blockType: Scratch.BlockType.LABEL,
-            text: Scratch.translate('Common AI'),
+            text: Scratch.translate({default: "Common AI", id: "Common AI"}),
           },
           {
             opcode: 'anthropicUrl',
@@ -244,7 +244,7 @@
 
           {
             blockType: Scratch.BlockType.LABEL,
-            text: Scratch.translate('Data processing(JSON)'),
+            text: Scratch.translate({default: "Data processing(JSON)", id: "Data processing(JSON)"}),
           },
           {
             opcode: 'setDataOfMap',
