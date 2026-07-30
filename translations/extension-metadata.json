@@ -13,6 +13,6 @@
         "aiblocks@name":"AI 积木",
         "aiblocks@description":"创建AI实例并使用流式响应与它们交互",
         "lingdongpopup@name":"灵动弹窗",
-        "lingdongpopup@description":"为项目添加优雅的弹窗通知、灵动岛、进度条和对话框提示"
+        "lingdongpopup@description":"一个更好的、更简洁高效的弹窗扩展"
     }
 }

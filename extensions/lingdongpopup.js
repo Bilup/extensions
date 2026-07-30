@@ -1,7 +1,7 @@
 // Name: LingDong Popup
 // ID: lingdongpopup
-// Description: Elegant popup notifications, Live Activities, progress bars and dialog prompts for projects.
-// By: 勇敢的菠萝🍍
+// Description: A better, more concise and efficient popup extension.
+// By: 勇敢的菠萝🍍 <https://space.bilibili.com/521949499>
 // License: MIT
 
 (function (Scratch) {
@@ -310,7 +310,7 @@
       return {
         id: 'lingdongpopup',
         name: Scratch.translate({default: 'LingDong Popup', id: 'extensionName'}),
-        description: Scratch.translate({default: 'Elegant popup notifications, Live Activities, progress bars and dialog prompts for projects', id: 'extensionDescription'}),
+        description: Scratch.translate({default: 'A better, more concise and efficient popup extension', id: 'extensionDescription'}),
         color1: '#5b7cfa',
         color2: '#4a63d8',
         color3: '#3a4fb5',
