@@ -175,7 +175,7 @@
         "ai@Value1": "值1",
 
         "lingdongpopup@extensionName": "灵动弹窗",
-        "lingdongpopup@extensionDescription": "为项目添加优雅的弹窗通知、灵动岛、进度条和对话框提示",
+        "lingdongpopup@extensionDescription": "一个更好的、更简洁高效的弹窗扩展",
         "lingdongpopup@errorNoSandbox": "「灵动弹窗」扩展需要在非沙盒模式下运行，请勾选\"不使用沙盒运行扩展\"",
         "lingdongpopup@notify": "弹出通知 标题 [TITLE] 内容 [BODY] 类型 [TYPE] 持续 [DURATION] 秒",
         "lingdongpopup@notify.defaultTitle": "你好！",

@@ -102,8 +102,10 @@
   overflow:hidden;text-overflow:ellipsis;}
 .ldp-bar{height:.4em;border-radius:.25em;background:rgba(127,127,127,.3);
   overflow:hidden;width:13em;margin-top:.4em;}
-.ldp-bar-fill{height:100%;width:0%;border-radius:inherit;background:var(--ldp-accent);
-  transition:width .35s cubic-bezier(.25,.8,.35,1);}
+/* 进度条使用 transform:scaleX 代替 width，高频更新时不会触发布局重排，避免掉帧 */
+.ldp-bar-fill{height:100%;width:100%;background:var(--ldp-accent);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform .35s cubic-bezier(.25,.8,.35,1);border-radius:0;}
 .ldp-percent{font-size:.8em;opacity:.72;margin-top:.15em;}
 .ldp-island-stack{position:absolute;top:.8em;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;pointer-events:none;z-index:9999;}
@@ -669,25 +671,38 @@
     setProgress(args) {
       const arr = namedPopups.get(toStr(args.ID));
       if (!arr || !arr.length) return;
-      const p = Math.min(100, Math.max(0, toNum(args.PERCENT)));
+      let p = toNum(args.PERCENT);
+      // 防御除以零等异常输入导致 NaN / Infinity，避免进度条消失
+      if (!Number.isFinite(p)) p = 0;
+      p = Math.min(100, Math.max(0, p));
       for (const item of arr) {
         if (!item || !item.fill) continue;
+        // 变化极小时跳过 DOM 更新，防止重复执行/每帧调用时大量无效重排
+        if (Math.abs((item.percent || 0) - p) < 0.01) continue;
         item.percent = p;
-        item.fill.style.width = p + '%';
-        if (item.percentEl) item.percentEl.textContent = Math.round(p) + '%';
+        item.fill.style.transform = 'scaleX(' + (p / 100) + ')';
+        if (item.percentEl) {
+          const t = Math.round(p) + '%';
+          if (item.percentEl.textContent !== t) item.percentEl.textContent = t;
+        }
       }
     }
 
     addProgress(args) {
       const arr = namedPopups.get(toStr(args.ID));
       if (!arr || !arr.length) return;
-      const delta = toNum(args.AMOUNT);
+      let delta = toNum(args.AMOUNT);
+      if (!Number.isFinite(delta)) delta = 0;
       for (const item of arr) {
         if (!item || !item.fill) continue;
-        const p = Math.min(100, Math.max(0, item.percent + delta));
+        const p = Math.min(100, Math.max(0, (item.percent || 0) + delta));
+        if (Math.abs((item.percent || 0) - p) < 0.01) continue;
         item.percent = p;
-        item.fill.style.width = p + '%';
-        if (item.percentEl) item.percentEl.textContent = Math.round(p) + '%';
+        item.fill.style.transform = 'scaleX(' + (p / 100) + ')';
+        if (item.percentEl) {
+          const t = Math.round(p) + '%';
+          if (item.percentEl.textContent !== t) item.percentEl.textContent = t;
+        }
       }
     }
 
