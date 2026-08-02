@@ -13,6 +13,8 @@
         "aiblocks@name":"AI 积木",
         "aiblocks@description":"创建AI实例并使用流式响应与它们交互",
         "lingdongpopup@name":"灵动弹窗",
-        "lingdongpopup@description":"一个更好的、更简洁高效的弹窗扩展"
+        "lingdongpopup@description":"一个更好的、更简洁高效的弹窗扩展",
+        "xiaoboluotoolbox@name":"小菠萝🍍的工具箱",
+        "xiaoboluotoolbox@description":"将列表、文本、数学、等实用工具整合在了一起"
     }
 }
