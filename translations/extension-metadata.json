@@ -16,5 +16,23 @@
         "lingdongpopup@description":"一个更好的、更简洁高效的弹窗扩展",
         "xiaoboluotoolbox@name":"小菠萝🍍的工具箱",
         "xiaoboluotoolbox@description":"将列表、文本、数学、等实用工具整合在了一起"
+    },
+    "zh-tw": {
+        "colortools@name": "顏色工具集",
+        "colortools@description": "超多關於顏色的工具喵，有混合顏色、反色、互補色、轉換格式等超好用的工具喵",
+        "easyblock@name": "便利積木+",
+        "easyblock@description": "讓創作更簡單，更方便",
+        "stringtools@name":"字串處理",
+        "stringtools@description":"更加便利地處理字串",
+        "approaches@name":"接近!",
+        "approaches@description":"非線性接近函數",
+        "encryption@name":"加密法",
+        "encryption@description":"處理不同需求的文字加密，保護資料安全",
+        "aiblocks@name":"AI 積木",
+        "aiblocks@description":"建立AI實例並使用串流回應與它們互動",
+        "lingdongpopup@name":"靈動彈窗",
+        "lingdongpopup@description":"一個更好的、更簡潔高效的彈窗擴充功能",
+        "xiaoboluotoolbox@name":"小菠蘿🍍的工具箱",
+        "xiaoboluotoolbox@description":"將列表、文字、數學等實用工具整合在一起"
     }
 }
