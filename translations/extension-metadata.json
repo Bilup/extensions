@@ -15,7 +15,9 @@
         "lingdongpopup@name":"灵动弹窗",
         "lingdongpopup@description":"一个更好的、更简洁高效的弹窗扩展",
         "xiaoboluotoolbox@name":"小菠萝🍍的工具箱",
-        "xiaoboluotoolbox@description":"将列表、文本、数学、等实用工具整合在了一起"
+        "xiaoboluotoolbox@description":"将列表、文本、数学、等实用工具整合在了一起",
+        "leishen@name":"雷神",
+        "leishen@description":"全屏后期特效：模糊、故障、泛光、预设风格与自定义着色器"
     },
     "zh-tw": {
         "colortools@name": "顏色工具集",
@@ -33,6 +35,8 @@
         "lingdongpopup@name":"靈動彈窗",
         "lingdongpopup@description":"一個更好的、更簡潔高效的彈窗擴充功能",
         "xiaoboluotoolbox@name":"小菠蘿🍍的工具箱",
-        "xiaoboluotoolbox@description":"將列表、文字、數學等實用工具整合在一起"
+        "xiaoboluotoolbox@description":"將列表、文字、數學等實用工具整合在一起",
+        "leishen@name":"雷神",
+        "leishen@description":"全螢幕後期特效：模糊、故障、泛光、預設風格與自訂著色器"
     }
 }
