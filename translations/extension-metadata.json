@@ -17,7 +17,9 @@
         "xiaoboluotoolbox@name":"小菠萝🍍的工具箱",
         "xiaoboluotoolbox@description":"将列表、文本、数学、等实用工具整合在了一起",
         "leishen@name":"雷神 Pro",
-        "leishen@description":"全屏后期特效：模糊、故障、泛光、预设风格与自定义着色器"
+        "leishen@description":"全屏后期特效：模糊、故障、泛光、预设风格与自定义着色器",
+        "kmsinputer@name":"输入框",
+        "kmsinputer@description":"0.2工作室出品的输入框扩展"
     },
     "zh-tw": {
         "colortools@name": "顏色工具集",
@@ -37,6 +39,8 @@
         "xiaoboluotoolbox@name":"小菠蘿🍍的工具箱",
         "xiaoboluotoolbox@description":"將列表、文字、數學等實用工具整合在一起",
         "leishen@name":"雷神 Pro",
-        "leishen@description":"全螢幕後期特效：模糊、故障、泛光、預設風格與自訂著色器"
+        "leishen@description":"全螢幕後期特效：模糊、故障、泛光、預設風格與自訂著色器",
+        "kmsinputer@name":"輸入框",
+        "kmsinputer@description":"0.2工作室出品的輸入框擴充功能"
     }
 }
